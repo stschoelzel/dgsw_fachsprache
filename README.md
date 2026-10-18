@@ -2,7 +2,7 @@
 
 Strukturentwurf für ein zweisprachiges Fachvokabular der Deutschen Gesellschaft für Spielwissenschaft e.V. (DGSW).
 
-- Inhalte: Markdown-Dateien, bearbeitbar mit [Obsidian](https://obsidian.md) oder jedem Texteditor
+- Inhalte: Markdown-Dateien, Ausgelegt für [Obsidian](https://obsidian.md), oder mit markdown Tool wie [Zettlr](https://www.zettlr.com/) oder jedem Texteditor
 - Website: statisch gebaut mit [Quartz](https://quartz.jzhao.xyz), kein Backend nötig
 - Veröffentlicht wird nur, was im Frontmatter `publish: true` trägt
 
