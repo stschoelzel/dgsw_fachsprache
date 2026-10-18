@@ -1,0 +1,48 @@
+filters:
+  and:
+    - file.inFolder("begriffe")
+properties:
+  note.id:
+    displayName: ID
+  file.name:
+    displayName: Begriff
+  note.en:
+    displayName: EN
+  note.status:
+    displayName: Status
+  note.betreuung:
+    displayName: Betreuung
+  note.publish:
+    displayName: Veröffentlicht
+views:
+  - type: table
+    name: Alle Begriffe
+    order:
+      - id
+      - file.name
+      - en
+      - status
+      - betreuung
+      - tags
+      - publish
+  - type: table
+    name: Im Review
+    filters:
+      and:
+        - status == "review"
+    order:
+      - id
+      - file.name
+      - status
+      - betreuung
+      - reviewt_von
+  - type: table
+    name: Entwürfe
+    filters:
+      and:
+        - status == "entwurf"
+    order:
+      - id
+      - file.name
+      - betreuung
+      - verfasst_von

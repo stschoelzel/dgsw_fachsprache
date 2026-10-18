@@ -1,0 +1,32 @@
+/* DGSW-Anmutung für den Vault: Exo 2, Schwarz/Weiß mit Cyan, Gelb, Magenta, Grün */
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap");
+
+body {
+  --font-text-theme: "Exo 2", "Segoe UI", Arial, sans-serif;
+  --font-interface-theme: "Exo 2", "Segoe UI", Arial, sans-serif;
+  --dgsw-cyan: #00ccee;
+  --dgsw-yellow: #ffe600;
+  --dgsw-magenta: #ee00cc;
+  --dgsw-green: #00dd55;
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 700;
+}
+
+.theme-light {
+  --h3-color: #006d85;
+  --link-color: #006d85;
+  --link-unresolved-color: #ee00cc;
+}
+
+.theme-dark {
+  --h3-color: var(--dgsw-cyan);
+  --link-color: var(--dgsw-cyan);
+  --link-unresolved-color: var(--dgsw-magenta);
+}
+
+/* Bereichs-Schlagwörter farbig */
+a.tag[href="#bereich/fuer-spiele"]   { background: rgba(0, 204, 238, .15); color: inherit; }
+a.tag[href="#bereich/ueber-spiele"]  { background: rgba(255, 230, 0, .25); color: inherit; }
+a.tag[href="#bereich/durch-spiele"]  { background: rgba(238, 0, 204, .15); color: inherit; }
+a.tag[href="#bereich/mit-spielen"]   { background: rgba(0, 221, 85, .15); color: inherit; }

@@ -1,0 +1,25 @@
+# Persönliche Obsidian-Einstellungen
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Plugin-Daten mit Zugangsschlüsseln - NIEMALS committen
+.obsidian/plugins/obsidian-local-rest-api/
+.obsidian/plugins/obsidian-git/data.json
+
+# Lokaler Website-Build
+_quartz/localBuild/
+_build/
+public/
+node_modules/
+
+# Claude-Ausgaben und -Arbeitsdateien
+.claude/
+_claude/
+claude-outputs/
+CLAUDE.local.md
+
+# System
+.DS_Store
+Thumbs.db

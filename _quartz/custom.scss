@@ -1,0 +1,36 @@
+@use "./base.scss";
+
+// DGSW-Anmutung: Exo 2, kräftige Überschriften, Akzentfarben Cyan / Gelb / Magenta / Grün
+:root {
+  --dgsw-cyan: #00ccee;
+  --dgsw-yellow: #ffe600;
+  --dgsw-magenta: #ee00cc;
+  --dgsw-green: #00dd55;
+}
+
+h1, h2, .page-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  color: var(--secondary);
+}
+
+// Seitentitel mit Farbleiste im Stil der vier Bereiche
+.page-title a {
+  border-bottom: 4px solid;
+  border-image: linear-gradient(90deg, var(--dgsw-cyan) 0 25%, var(--dgsw-yellow) 25% 50%, var(--dgsw-magenta) 50% 75%, var(--dgsw-green) 75% 100%) 1;
+  padding-bottom: 2px;
+}
+
+// Bereichs-Schlagwörter farbig
+a.tag-link[href*="bereich/fuer-spiele"] { background: rgba(0, 204, 238, 0.15); }
+a.tag-link[href*="bereich/ueber-spiele"] { background: rgba(255, 230, 0, 0.3); }
+a.tag-link[href*="bereich/durch-spiele"] { background: rgba(238, 0, 204, 0.15); }
+a.tag-link[href*="bereich/mit-spielen"] { background: rgba(0, 221, 85, 0.15); }
+
+// Tabellen etwas ruhiger
+table th {
+  font-weight: 600;
+}
