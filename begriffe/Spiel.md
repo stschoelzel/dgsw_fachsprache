@@ -10,8 +10,9 @@ betreuung:
 verfasst_von: []
 reviewt_von: []
 angelegt_am: 2026-10-18
+geaendert_am: 2026-10-18
 geprueft_am:
-publish: false
+publish: true
 ---
 
 
@@ -64,3 +65,4 @@ Gutes Testfeld für die Zweisprachigkeit: Hier zeigt sich, warum die Fachsprache
 - Huizinga, J. (1956). *Homo Ludens. Vom Ursprung der Kultur im Spiel.* Reinbek: Rowohlt. (Original 1938)
 - Juul, J. (2005). *Half-Real: Video Games between Real Rules and Fictional Worlds.* Cambridge, MA: MIT Press.
 - Salen, K. & Zimmerman, E. (2004). *Rules of Play: Game Design Fundamentals.* Cambridge, MA: MIT Press.
+ 

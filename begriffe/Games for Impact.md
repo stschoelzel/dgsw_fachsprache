@@ -10,8 +10,9 @@ betreuung: AG Serious Games
 verfasst_von: []
 reviewt_von: []
 angelegt_am: 2026-10-18
+geaendert_am: 2026-10-18
 geprueft_am:
-publish: false
+publish: true
 ---
 
 
@@ -40,3 +41,4 @@ Zu klären: Ist "Games for Impact" ein eigener Begriff oder eher ein Label aus P
 ## Quellen
 
 - *offen*
+-  

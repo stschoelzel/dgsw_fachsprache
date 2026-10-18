@@ -10,8 +10,9 @@ betreuung: AG Serious Games
 verfasst_von: []
 reviewt_von: []
 angelegt_am: 2026-10-18
+geaendert_am: 2026-10-18
 geprueft_am:
-publish: false
+publish: true
 ---
 
 
@@ -51,3 +52,4 @@ Von Ahn & Dabbish (2008) beschreiben Games with a Purpose als Spiele, bei denen 
 ## Quellen
 
 - von Ahn, L. & Dabbish, L. (2008). Designing Games with a Purpose. *Communications of the ACM, 51*(8), 58-67.
+ 

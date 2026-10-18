@@ -9,6 +9,7 @@ betreuung:
 verfasst_von: []
 reviewt_von: []
 angelegt_am: {{date:YYYY-MM-DD}}
+geaendert_am:
 geprueft_am:
 publish: false
 ---

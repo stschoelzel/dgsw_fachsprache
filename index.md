@@ -1,5 +1,5 @@
 ---
-title: Fachsprache der Spielwissenschaft
+title: Begriffe
 publish: true
 ---
 Die **Fachsprache** sammelt zentrale Begriffe der Spielwissenschaft auf Deutsch und Englisch. Jeder Eintrag beschreibt einen *Begriff* (ein Konzept), nicht nur ein Wort: Deutsche und englische Benennungen hängen am selben Eintrag, Beziehungen zu Ober-, Unter- und verwandten Begriffen sind ausgewiesen, und konkurrierende Definitionen aus der Literatur stehen mit Beleg nebeneinander.

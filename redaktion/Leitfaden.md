@@ -61,6 +61,13 @@ Jeder Begriffseintrag trägt im Frontmatter eine eindeutige, fortlaufende Kennun
 - Neue Einträge starten mit leerem Feld `id`. Die Redaktion vergibt die nächste freie Nummer, wenn sie den Eintrag zur Veröffentlichung freigibt. *(Vorschlag; Verfahren bei Bedarf zu klären.)*
 - Die Übersicht (`redaktion/Übersicht.base`) zeigt die ID als erste Spalte.
 
+## Datumsfelder
+
+Die Startseite zeigt die zuletzt angelegten oder bearbeiteten Einträge. Dafür tragen Einträge zwei Felder im Frontmatter:
+
+- `angelegt_am` - Datum, an dem der Eintrag angelegt wurde (die Vorlage setzt es automatisch).
+- `geaendert_am` - Datum der letzten inhaltlichen Änderung. Wer einen Eintrag bearbeitet, trägt hier das aktuelle Datum ein (Format `JJJJ-MM-TT`). Ist das Feld leer, gilt `angelegt_am`.
+
 ## Dateinamen
 
 - Dateiname = deutsche Vorzugsbenennung, im Singular (`Serious Game.md`, nicht `Serious Games.md`).

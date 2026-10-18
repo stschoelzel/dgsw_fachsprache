@@ -10,8 +10,9 @@ betreuung: AG Serious Games (UAG Begriffsdefinition)
 verfasst_von: []
 reviewt_von: []
 angelegt_am: 2026-10-18
+geaendert_am: 2026-10-18
 geprueft_am:
-publish: false
+publish: true
 ---
 
 
@@ -62,3 +63,4 @@ Die Definitionen unterscheiden sich darin, ob Serious Games digital sein müssen
 - Abt, C. C. (1970). *Serious Games.* New York: Viking Press.
 - Michael, D. & Chen, S. (2006). *Serious Games: Games That Educate, Train, and Inform.* Boston: Thomson Course Technology.
 - Zyda, M. (2005). From Visual Simulation to Virtual Reality to Games. *Computer, 38*(9), 25-32.
+ 
