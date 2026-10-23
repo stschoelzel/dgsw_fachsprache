@@ -43,6 +43,7 @@ jobs:
             vault/ quartz/content/
           cp vault/_quartz/quartz.config.ts vault/_quartz/quartz.layout.ts quartz/
           cp vault/_quartz/custom.scss quartz/quartz/styles/custom.scss
+          cp -r vault/_quartz/static/fonts quartz/quartz/static/
 
       - name: Website bauen
         working-directory: quartz
