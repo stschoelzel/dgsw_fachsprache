@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 /**
  * Fachsprache der Spielwissenschaft (DGSW) - Quartz 4 Konfiguration
- * Farben und Schrift angelehnt an spiel-wissenschaft.de
+ * Farben und Schrift angelehnt an spiel-wissenschaft.de (Navy #1c2e4a, CMYK-Akzente, Exo 2)
  */
 const config: QuartzConfig = {
   configuration: {
@@ -18,12 +18,12 @@ const config: QuartzConfig = {
     ignorePatterns: [".obsidian", ".github", "_quartz", "_build", "vorlagen", "README.md", "**/*.base"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
-      cdnCaching: true,
+      fontOrigin: "local",
+      cdnCaching: false,
       typography: {
         header: "Exo 2",
         body: "Exo 2",
-        code: "IBM Plex Mono",
+        code: "Consolas",
       },
       colors: {
         lightMode: {
@@ -32,9 +32,9 @@ const config: QuartzConfig = {
           gray: "#9a9a9a",
           darkgray: "#2a2a2a",
           dark: "#0a0a0a",
-          secondary: "#006d85",
+          secondary: "#1c2e4a",
           tertiary: "#ee00cc",
-          highlight: "rgba(0, 204, 238, 0.10)",
+          highlight: "rgba(0, 204, 238, 0.08)",
           textHighlight: "#ffe60088",
         },
         darkMode: {

@@ -1,66 +1,61 @@
 ---
-id: "0002"
-title: Serious Game
-de: [Serious Game]
-en: [serious game]
-aliases: [Serious Games, serious game]
-tags: [bereich/durch-spiele, beispiel]
-status: entwurf
-betreuung: AG Serious Games (UAG Begriffsdefinition)
+id:
+title: "Serious Game"
+typ: begriff
+de: ["Serious Game"]
+en: []
+aliases: ["Serious Games"]
+oberbegriff:
+wikidata:
+tags: [bereich/durch-spiele, kategorie/spielpädagogik, belege-fehlen]
+status: review
+betreuung:
 verfasst_von: []
 reviewt_von: []
-angelegt_am: 2026-10-18
-geaendert_am: 2026-10-18
+created: 2026-10-23
+modified: 2026-10-23
 geprueft_am:
+kurz: "Spiele, die primär für einen anderen Zweck als reine Unterhaltung entwickelt werden – für Bildung, Training, Gesundheit oder gesellschaftlichen Wandel."
+dgsw_stand: 2026-08-20
+quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=serious-games
 publish: true
 ---
 
-
-> [!info] Eintrag
-> **Status:** entwurf · **Bereich:** [[durch-spiele|DURCH Spiele]] · **Betreuung:** AG Serious Games
 
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
 | --- | --- | --- | --- |
-| de | Serious Game | ernsthaftes Spiel *(selten)*, Lernspiel *(Teilbereich)* | - |
-| en | serious game | | voll |
+| de | Serious Game |  | - |
+| en | *offen* | | *offen* |
 
 ## Definition
 
-**DE:** *offen, siehe UAG Begriffsdefinition*
+**DE:** Spiele, die primär für einen anderen Zweck als reine Unterhaltung entwickelt werden – für Bildung, Training, Gesundheit oder gesellschaftlichen Wandel. *[Beleg fehlt]*
 
 **EN:** *offen*
 
-## Abgrenzung
+## Erläuterung
 
-Abzugrenzen sind insbesondere [[Gamification]] (spielerische Elemente in Nicht-Spiel-Kontexten, kein eigenständiges Spiel), [[Game with a Purpose]] (Spielen als Mittel für Rechenaufgaben) und [[Games for Impact]]. Offen ist, wo [[Politisches Spiel|politische Spiele]] einzuordnen sind.
+### Definition
 
-## Beziehungen
+Serious Games (ernsthafter Spiele) sind Spiele mit einem expliziten, primären Zweck jenseits der Unterhaltung. Der Begriff wurde [[redaktion/Literatur#Michael & Chen|2002 von David Michael und Sande Chen]] popularisiert und umfasst ein breites Spektrum von Anwendungen.
 
-- **Oberbegriff:** [[Spiel]]
-- **Unterbegriffe:** [[Lernspiel]], [[Politisches Spiel]] *(zu prüfen)*
-- **Verwandt:** [[Games for Impact]], [[Game with a Purpose]], [[Gamification]], [[Game-based Learning]]
+### Anwendungsfelder
 
-## Definitionen in der Literatur
+- **Bildung und Ausbildung:** Militärsimulationen, medizinische Trainingsspiele
+- **Gesundheit:** Therapeutische Spiele, Bewegungsförderung (Exergames)
+- **Unternehmenskommunikation:** Onboarding, Compliance-Training
+- **Gesellschaftliche Themen:** Soziale Empathiespiele, Umweltbewusstsein
 
-> "[...] these games have an explicit and carefully thought-out educational purpose and are not intended to be played primarily for amusement." (Abt 1970, S. 9, *prüfen*)
+### Abgrenzung und Überschneidung
 
-> "Serious game: a mental contest, played with a computer in accordance with specific rules, that uses entertainment to further government or corporate training, education, health, public policy, and strategic communication objectives." (Zyda 2005, S. 26)
+Serious Games überschneiden sich mit [[Game-Based Learning|GBL]] (Methode) und [[Gamification]] (Designelemente in Nicht-Spielkontexten). Die Grenzen sind fließend. Entscheidend ist die primäre Designintention.
 
-Michael & Chen (2006) bestimmen Serious Games als Spiele, deren primärer Zweck nicht Unterhaltung, Vergnügen oder Spaß ist.
+### Qualitätssicherung
 
-## Beispiele
-
-*Path Out* (Causa Creations)
-
-## Anmerkungen
-
-Die Definitionen unterscheiden sich darin, ob Serious Games digital sein müssen (Zyda: ja; Abt: nein, Abt schreibt auch über analoge Spiele). Für die DGSW, die analoge und digitale Spiele gleichwertig behandelt, ist das relevant.
+Effektive Serious Games müssen sowohl als Spiel als auch als Lernmedium funktionieren. Der „Fun-Learning-Balance" ist eine zentrale Designherausforderung.
 
 ## Quellen
 
-- Abt, C. C. (1970). *Serious Games.* New York: Viking Press.
-- Michael, D. & Chen, S. (2006). *Serious Games: Games That Educate, Train, and Inform.* Boston: Thomson Course Technology.
-- Zyda, M. (2005). From Visual Simulation to Virtual Reality to Games. *Computer, 38*(9), 25-32.
- 
+- [[redaktion/Literatur#Michael & Chen|Michael, D. und Chen, S. (2006)]]: *Serious Games: Games That Educate, Train, and Inform.* Boston: Thomson Course Technology.

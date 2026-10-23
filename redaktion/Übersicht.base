@@ -6,6 +6,10 @@ properties:
     displayName: ID
   file.name:
     displayName: Begriff
+  note.typ:
+    displayName: Typ
+  note.oberbegriff:
+    displayName: Oberbegriff
   note.en:
     displayName: EN
   note.status:
@@ -20,6 +24,8 @@ views:
     order:
       - id
       - file.name
+      - typ
+      - oberbegriff
       - en
       - status
       - betreuung

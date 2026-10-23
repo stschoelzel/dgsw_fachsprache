@@ -1,36 +1,205 @@
 @use "./base.scss";
 
-// DGSW-Anmutung: Exo 2, kräftige Überschriften, Akzentfarben Cyan / Gelb / Magenta / Grün
+// Exo 2 (SIL OFL 1.1) lokal eingebunden, kein Abruf von Google-Servern
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./static/fonts/exo-2-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./static/fonts/exo-2-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./static/fonts/exo-2-latin-500-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./static/fonts/exo-2-latin-600-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./static/fonts/exo-2-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("./static/fonts/exo-2-latin-800-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+// DGSW-Anmutung nach spiel-wissenschaft.de:
+// Exo 2, Schwarz/Weiß mit Navy, CMYK-Akzente (Cyan / Gelb / Grün / Magenta), Rauten als Logo-Element
 :root {
   --dgsw-cyan: #00ccee;
   --dgsw-yellow: #ffe600;
   --dgsw-magenta: #ee00cc;
   --dgsw-green: #00dd55;
+  --dg-navy: #1c2e4a;
+  --dg-navy-text: #1c2e4a;
+  --dg-card: #ffffff;
+  --dg-page: #f7f7f8;
+  --dg-cyan-text: #006d85;
+  --dg-yellow-text: #7a5800;
+  --dg-magenta-text: #a0009a;
+  --dg-green-text: #007a32;
+  // Kopfblock und Footer: hell im Light Mode, schwarz im Dark Mode
+  --dg-surface: #ffffff;
+  --dg-ink: #0a0a0a;
+  --dg-ink-2: rgba(10, 10, 10, 0.7);
+  --dg-ink-3: rgba(10, 10, 10, 0.48);
+  --dg-line: #e0e0e0;
+  --dg-link: #1c2e4a;
+  --dg-link-hover: #008fa8;
 }
 
-h1, h2, .page-title {
+:root[saved-theme="dark"] {
+  --dg-navy-text: #8fb3e8;
+  --dg-card: #141414;
+  --dg-page: #0a0a0a;
+  --dg-cyan-text: #33d9f5;
+  --dg-yellow-text: #ffe600;
+  --dg-magenta-text: #ff5ce6;
+  --dg-green-text: #33e67a;
+  --dg-surface: #0a0a0a;
+  --dg-ink: #ffffff;
+  --dg-ink-2: rgba(255, 255, 255, 0.72);
+  --dg-ink-3: rgba(255, 255, 255, 0.45);
+  --dg-line: #2a2a2a;
+  --dg-link: #00ccee;
+  --dg-link-hover: #00ccee;
+}
+
+body {
+  background: var(--dg-page);
+}
+
+h1, h2, h3 {
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
-h3 {
-  color: var(--secondary);
+// Rauten-Marker vor den Abschnittsüberschriften der Einträge
+article h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2.2rem;
+  &::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    transform: rotate(45deg);
+    background: var(--dgsw-cyan);
+  }
 }
 
-// Seitentitel mit Farbleiste im Stil der vier Bereiche
-.page-title a {
-  border-bottom: 4px solid;
-  border-image: linear-gradient(90deg, var(--dgsw-cyan) 0 25%, var(--dgsw-yellow) 25% 50%, var(--dgsw-magenta) 50% 75%, var(--dgsw-green) 75% 100%) 1;
-  padding-bottom: 2px;
+article h3 {
+  color: var(--dg-navy-text);
 }
 
-// Bereichs-Schlagwörter farbig
-a.tag-link[href*="bereich/fuer-spiele"] { background: rgba(0, 204, 238, 0.15); }
-a.tag-link[href*="bereich/ueber-spiele"] { background: rgba(255, 230, 0, 0.3); }
-a.tag-link[href*="bereich/durch-spiele"] { background: rgba(238, 0, 204, 0.15); }
-a.tag-link[href*="bereich/mit-spielen"] { background: rgba(0, 221, 85, 0.15); }
-
-// Tabellen etwas ruhiger
-table th {
+// Links: Navy statt Pastellhinterlegung
+a.internal {
+  background-color: transparent;
+  padding: 0;
   font-weight: 600;
+  border-bottom: 1px solid rgba(0, 204, 238, 0.45);
+  &:hover {
+    border-bottom-color: var(--dgsw-magenta);
+  }
+}
+
+.dg-hero a,
+.dg-nav a,
+a.dg-brand,
+a.dg-slim,
+.dg-col a,
+.dg-sw a,
+.dg-foot a,
+a.dg-more,
+a.dg-chip,
+.term-table a.internal {
+  border-bottom: none !important;
+}
+
+// Bereich steht als Pill im Kopf; Bereichs-Schlagwörter nicht doppelt zeigen
+.tags li:has(a[href*="bereich/"]) {
+  display: none;
+}
+
+// Infobox-Callout der Einträge
+.callout[data-callout="info"] {
+  --color: var(--dg-navy-text);
+  --border: var(--dg-navy);
+  --bg: var(--dg-card);
+  border: 1px solid var(--lightgray);
+  border-left: 4px solid var(--dg-navy);
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+// Tabellen in Einträgen
+article table {
+  th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--dg-navy-text);
+    border-bottom: 2px solid var(--dg-navy);
+  }
+}
+
+blockquote {
+  border-left-color: var(--dgsw-magenta);
+}
+
+// Schlagwörter
+a.tag-link {
+  border-radius: 20px;
+  font-weight: 600;
+}
+a.tag-link[href*="bereich/fuer-spiele"] { background: rgba(0, 180, 216, 0.12); color: var(--dg-cyan-text); }
+a.tag-link[href*="bereich/ueber-spiele"] { background: rgba(255, 230, 0, 0.18); color: var(--dg-yellow-text); }
+a.tag-link[href*="bereich/durch-spiele"] { background: rgba(238, 0, 204, 0.08); color: var(--dg-magenta-text); }
+a.tag-link[href*="bereich/mit-spielen"] { background: rgba(0, 221, 85, 0.1); color: var(--dg-green-text); }
+
+// Rechte Spalte: ruhigere Kästen
+.right .graph > .graph-outer,
+.right .backlinks,
+.right .toc {
+  border-radius: 8px;
+}
+.right h3 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+}
+
+// Auf "Alle Begriffe" steht die eigene Liste statt der automatischen Seitenliste
+body[data-slug="begriffe/index"] .page-listing {
+  display: none;
 }

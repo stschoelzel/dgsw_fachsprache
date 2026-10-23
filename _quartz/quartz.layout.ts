@@ -5,13 +5,21 @@ import { QuartzComponent, QuartzComponentProps } from "./quartz/components/types
 import { resolveRelative } from "./quartz/util/path"
 
 /**
- * Startseite "Begriffe" der DGSW-Fachsprache.
+ * DGSW-Fachsprache: Layout und eigene Komponenten.
  *
- *  - TermGraph:  großer Graph, nur Einträge aus begriffe/ (keine Index-, Redaktions- oder Bereichsseiten)
- *  - RecentList: zuletzt angelegte oder bearbeitete Einträge
- *  - TermTable:  Begriffssuche und sortierbare Liste (ID, Deutsch, Englisch, Bereich)
+ * Gestaltung angelehnt an spiel-wissenschaft.de (Exo 2, Schwarz/Weiß, Navy, CMYK-Akzente,
+ * Rauten, Page-Hero, Slim-Cards, Säulen-Infografik FÜR / ÜBER / DURCH + Fundament, dunkler Footer).
  *
- * Alle Daten stammen aus dem Frontmatter der Einträge (id, de, en, tags, angelegt_am, geaendert_am).
+ * Navigation (links):
+ *   Fachsprache            -> Begriffe (Übersicht, Startseite), Alle Begriffe A-Z
+ *   Redaktion & Impressum  -> Leitfaden, Mitwirken, Literatur, Impressum
+ *
+ * Startseite "Begriffe":
+ *   PageHero, TermGraph (unverändert), RecentList, BereichGrid, TermTable, danach der Text aus index.md
+ *
+ * Alle Daten stammen aus dem Frontmatter:
+ *   Begriffe:    id, de, en, tags (bereich/...), status, created, modified
+ *   Bereiche:    bereich, untertitel, icon, beschreibung, felder, betreuung (fachgebiete/*.md)
  */
 
 const BEREICHE: Record<string, { label: string; color: string }> = {
@@ -22,6 +30,29 @@ const BEREICHE: Record<string, { label: string; color: string }> = {
   fundament: { label: "Fundament", color: "#9a9a9a" },
 }
 
+/** Navigation links: [Slug, Bezeichnung] */
+const NAV: { title: string; items: [string, string][] }[] = [
+  {
+    title: "Fachsprache",
+    items: [
+      ["index", "Begriffe"],
+      ["begriffe/index", "Alle Begriffe A-Z"],
+    ],
+  },
+  {
+    title: "Redaktion & Impressum",
+    items: [
+      ["redaktion/Leitfaden", "Redaktionsleitfaden"],
+      ["redaktion/Mitwirken", "Mitwirken"],
+      ["redaktion/Literatur", "Literatur"],
+      ["redaktion/Impressum", "Impressum"],
+    ],
+  },
+]
+
+const DGSW = "https://www.spiel-wissenschaft.de"
+const REPO = "https://github.com/stschoelzel/dgsw_fachsprache"
+
 const asList = (v: unknown): string[] =>
   (Array.isArray(v) ? v : v ? [v] : []).map((x) => String(x).trim()).filter(Boolean)
 
@@ -31,7 +62,16 @@ const toDate = (v: unknown): Date | null => {
   return isNaN(d.getTime()) ? null : d
 }
 
+const fmtDate = (d: Date) => d.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })
+
 const isTerm = (slug?: string) => !!slug && slug.startsWith("begriffe/") && slug !== "begriffe/index"
+const isBereich = (slug?: string) => !!slug && slug.startsWith("fachgebiete/") && slug !== "fachgebiete/index"
+const isRedaktion = (slug?: string) => !!slug && slug.startsWith("redaktion/")
+
+const bereichKeys = (fm: Record<string, any>) =>
+  asList(fm.tags)
+    .filter((t) => t.startsWith("bereich/"))
+    .map((t) => t.slice("bereich/".length))
 
 /** Alle Begriffseinträge als einfache Datensätze */
 function terms(allFiles: QuartzComponentProps["allFiles"]) {
@@ -41,17 +81,19 @@ function terms(allFiles: QuartzComponentProps["allFiles"]) {
       const fm = (f.frontmatter ?? {}) as Record<string, any>
       const title = String(fm.title ?? f.slug)
       const de = asList(fm.de)
-      const bereiche = asList(fm.tags)
-        .filter((t) => t.startsWith("bereich/"))
-        .map((t) => BEREICHE[t.slice("bereich/".length)]?.label ?? t.slice("bereich/".length))
-      const created = toDate(fm.angelegt_am)
-      const changed = toDate(fm.geaendert_am) ?? created
+      const keys = bereichKeys(fm)
+      const created = toDate(fm.created)
+      const changed = toDate(fm.modified) ?? created
       return {
         slug: f.slug!,
         id: String(fm.id ?? ""),
         de: de.length ? de : [title],
         en: asList(fm.en),
-        bereiche,
+        keys,
+        bereiche: keys.map((k) => BEREICHE[k]?.label ?? k),
+        status: String(fm.status ?? ""),
+        // optionale Kurzbeschreibung für Listen (Frontmatter "kurz"); der Text der Infobox eignet sich nicht
+        kurz: String(fm.kurz ?? ""),
         created,
         changed,
       }
@@ -59,6 +101,205 @@ function terms(allFiles: QuartzComponentProps["allFiles"]) {
     .sort((a, b) => a.de[0].localeCompare(b.de[0], "de"))
 }
 
+/** Bereichsseiten aus fachgebiete/ */
+function bereiche(allFiles: QuartzComponentProps["allFiles"]) {
+  const order = Object.keys(BEREICHE)
+  return allFiles
+    .filter((f) => isBereich(f.slug))
+    .map((f) => {
+      const fm = (f.frontmatter ?? {}) as Record<string, any>
+      const key = String(fm.bereich ?? f.slug!.split("/").pop())
+      return {
+        slug: f.slug!,
+        key,
+        label: String(fm.title ?? BEREICHE[key]?.label ?? key),
+        untertitel: String(fm.untertitel ?? ""),
+        icon: String(fm.icon ?? ""),
+        beschreibung: String(fm.beschreibung ?? ""),
+        felder: asList(fm.felder),
+        betreuung: String(fm.betreuung ?? ""),
+      }
+    })
+    .sort((a, b) => order.indexOf(a.key) - order.indexOf(b.key))
+}
+
+const link = (from: string, to: string, attrs: Record<string, any>, children: any) =>
+  h("a", { href: resolveRelative(from as any, to as any), class: "internal", ...attrs }, children)
+
+const pill = (label: string, cls: string) => h("span", { class: "dg-pill " + cls }, label)
+
+/** Bereichs-Chip, farbig wie auf spiel-wissenschaft.de */
+const chip = (key: string, label: string, href?: string) =>
+  href ? h("a", { href, class: "internal dg-chip dg-chip--" + key }, label) : h("span", { class: "dg-chip dg-chip--" + key }, label)
+
+/** Überzeile + Überschrift + Link rechts, wie die Abschnittsköpfe der DGSW-Startseite */
+const sectionHead = (kicker: string, title: string, more?: any) =>
+  h("div", { class: "dg-section-head" }, [h("div", {}, [h("p", { class: "dg-kicker" }, kicker), h("h2", {}, title)]), more ?? null])
+
+/* ------------------------------------------------------------------ */
+/* Kopf: Marke (Rauten + DGSW)                                          */
+/* ------------------------------------------------------------------ */
+
+const Brand: QuartzComponent = ({ fileData }: QuartzComponentProps) =>
+  h("a", { href: resolveRelative(fileData.slug!, "index" as any), class: "internal dg-brand" }, [
+    h("span", { class: "dg-brand-mark", "aria-hidden": "true" }, [
+      h("i", { class: "c" }),
+      h("i", { class: "y" }),
+      h("i", { class: "g" }),
+      h("i", { class: "m" }),
+    ]),
+    h("span", { class: "dg-brand-text" }, [h("b", {}, "DGSW Fachsprache"), h("small", {}, "Begriffe der Spielwissenschaft")]),
+  ])
+
+Brand.css = `
+.dg-brand { display: flex; align-items: center; gap: .7rem; background: none !important; padding: 0 !important; margin: 1.5rem 0 .25rem; color: var(--dark) !important; }
+.dg-brand-mark { position: relative; width: 34px; height: 34px; flex-shrink: 0; }
+.dg-brand-mark i { position: absolute; width: 14px; height: 14px; transform: rotate(45deg); border-radius: 1px; }
+.dg-brand-mark .c { background: #00ccee; left: 10px; top: 0; }
+.dg-brand-mark .y { background: #ffe600; left: 0; top: 10px; }
+.dg-brand-mark .g { background: #00dd55; left: 20px; top: 10px; }
+.dg-brand-mark .m { background: #ee00cc; left: 10px; top: 20px; }
+.dg-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.dg-brand-text b { font-size: 1.15rem; font-weight: 800; letter-spacing: -.01em; }
+.dg-brand-text small { font-size: .68rem; color: var(--gray); letter-spacing: .02em; }
+`
+
+/* ------------------------------------------------------------------ */
+/* Navigation links: Fachsprache | Redaktion & Impressum               */
+/* ------------------------------------------------------------------ */
+
+const SideNav: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+  const here = fileData.slug!
+  const activeOf = (slug: string) =>
+    here === slug ||
+    (slug === "index" && (isTerm(here) || isBereich(here) || here.startsWith("tags/"))) ||
+    (slug === "begriffe/index" && here === "begriffe/index")
+  return h(
+    "nav",
+    { class: "dg-nav", "aria-label": "Navigation" },
+    NAV.map((group) =>
+      h("div", { class: "dg-nav-group" }, [
+        h("p", { class: "dg-nav-title" }, group.title),
+        h(
+          "ul",
+          {},
+          group.items.map(([slug, label]) =>
+            h("li", {}, link(here, slug, { class: "internal dg-nav-link" + (activeOf(slug) ? " active" : "") }, label)),
+          ),
+        ),
+      ]),
+    ),
+  )
+}
+
+SideNav.css = `
+.dg-nav { margin: .75rem 0 0; }
+.dg-nav-group { margin-bottom: 1.1rem; }
+.dg-nav-title { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--gray); margin: 0 0 .35rem; }
+.dg-nav ul { list-style: none; padding: 0; margin: 0; }
+.dg-nav li { margin: 0; }
+.dg-nav-link { display: block; padding: .38rem .7rem; border-radius: 6px; font-size: .92rem; font-weight: 500; color: var(--darkgray) !important; background: none !important; }
+.dg-nav-link::before { content: "◆"; font-size: .5em; margin-right: .55em; vertical-align: middle; }
+.dg-nav li:nth-child(4n+1) .dg-nav-link::before { color: #00ccee; }
+.dg-nav li:nth-child(4n+2) .dg-nav-link::before { color: #c9a000; }
+.dg-nav li:nth-child(4n+3) .dg-nav-link::before { color: #00b347; }
+.dg-nav li:nth-child(4n+4) .dg-nav-link::before { color: #ee00cc; }
+.dg-nav-link:hover { background: var(--lightgray) !important; color: var(--dark) !important; }
+.dg-nav-link.active { background: var(--dg-navy) !important; color: #fff !important; font-weight: 600; }
+@media all and (max-width: 800px) {
+  .left.sidebar { flex-wrap: wrap !important; }
+  .dg-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; width: 100%; flex-basis: 100%; order: 10; margin-top: .25rem; }
+  .dg-nav-group { margin-bottom: .25rem; }
+  .dg-nav ul { display: flex; flex-wrap: wrap; gap: .15rem; }
+  .dg-nav-link { padding: .25rem .55rem; font-size: .85rem; }
+}
+`
+
+/* ------------------------------------------------------------------ */
+/* Page-Hero: dunkler Kopf mit Brotkrumen, Pill, Titel, Untertitel     */
+/* ------------------------------------------------------------------ */
+
+const STATUS_CLASS: Record<string, string> = {
+  entwurf: "dg-pill--yellow",
+  review: "dg-pill--cyan",
+  dokumentiert: "dg-pill--green",
+  arbeitsdefinition: "dg-pill--navy",
+  veraltet: "dg-pill--grey",
+}
+
+const PageHero: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+  const slug = fileData.slug!
+  const fm = (fileData.frontmatter ?? {}) as Record<string, any>
+  const title = String(fm.title ?? slug.split("/").pop())
+  const crumb = (to: string, label: string) => link(slug, to, {}, label)
+  const sep = h("span", { class: "sep" }, "›")
+
+  let crumbs: any[] = [h("a", { href: DGSW + "/projekte/wiki/" }, "DGSW"), sep, crumb("index", "Fachsprache")]
+  let pills: any[] = []
+  let subtitle: any = null
+  let accent = "linear-gradient(90deg,#00ccee 0 25%,#ffe600 25% 50%,#00dd55 50% 75%,#ee00cc 75%)"
+
+  if (slug === "index") {
+    crumbs = [h("a", { href: DGSW + "/" }, "DGSW"), sep, h("a", { href: DGSW + "/projekte/" }, "Projekte"), sep, h("span", {}, "Fachsprachen-Wiki")]
+    pills = [pill("Fachsprachen-Wiki", "dg-pill--magenta"), h("span", { class: "dg-hero-meta" }, "Deutsch · Englisch · analog & digital")]
+    subtitle = "Wissenschaftliches Begriffslexikon der Spielwissenschaft. Ein Eintrag pro Begriff, zweisprachig, mit belegten Definitionen und Beziehungen."
+  } else if (isTerm(slug)) {
+    const keys = bereichKeys(fm)
+    crumbs.push(sep, crumb("begriffe/index", "Begriffe"))
+    pills = [
+      ...keys.map((k) => pill(BEREICHE[k]?.label ?? k, "dg-pill--" + k)),
+      fm.status ? pill(String(fm.status), STATUS_CLASS[String(fm.status)] ?? "dg-pill--grey") : null,
+      fm.typ && String(fm.typ) !== "begriff" ? pill(String(fm.typ), "dg-pill--navy") : null,
+      // Wartungsmarke nach dem Vorbild von Wikipedia ("Belege fehlen" / "citation needed")
+      asList(fm.tags).includes("belege-fehlen") ? pill("Belege fehlen", "dg-pill--warn") : null,
+      fm.id ? h("span", { class: "dg-hero-meta" }, "ID " + fm.id) : null,
+    ]
+    const en = asList(fm.en)
+    subtitle = en.length ? h("span", {}, [h("span", { class: "dg-lang" }, "EN"), " " + en.join(" · ")]) : null
+    if (keys[0] && BEREICHE[keys[0]]) accent = BEREICHE[keys[0]].color
+  } else if (isBereich(slug)) {
+    crumbs.push(sep, h("span", {}, "Bereiche"))
+    const key = String(fm.bereich ?? "")
+    pills = [pill("Bereich", "dg-pill--" + key)]
+    subtitle = fm.untertitel ? String(fm.untertitel) : null
+    if (BEREICHE[key]) accent = BEREICHE[key].color
+  } else if (isRedaktion(slug)) {
+    crumbs.push(sep, h("span", {}, "Redaktion & Impressum"))
+    pills = [pill(slug === "redaktion/Impressum" ? "Rechtliches" : "Redaktion", "dg-pill--navy")]
+    subtitle = fm.description ? String(fm.description) : null
+    accent = "#1c2e4a"
+  } else if (slug === "begriffe/index") {
+    pills = [pill("Verzeichnis", "dg-pill--cyan")]
+    subtitle = "Alle veröffentlichten Einträge, sortierbar und durchsuchbar."
+  } else if (slug.startsWith("tags/")) {
+    pills = [pill("Schlagwort", "dg-pill--grey")]
+  }
+
+  return h("div", { class: "dg-hero", style: `--dg-accent:${accent}` }, [
+    h("div", { class: "dg-hero-deco", "aria-hidden": "true" }),
+    h("p", { class: "dg-crumbs" }, crumbs),
+    pills.length ? h("div", { class: "dg-hero-pills" }, pills) : null,
+    h("h1", { class: "article-title" }, title),
+    subtitle ? h("p", { class: "dg-hero-sub" }, subtitle) : null,
+  ])
+}
+
+PageHero.css = `
+.dg-hero { position: relative; overflow: hidden; background: var(--dg-surface); color: var(--dg-ink); border: 1px solid var(--dg-line); border-top: none; box-shadow: 0 2px 16px rgba(0,0,0,.06); border-radius: 0 0 10px 10px; padding: 1.6rem 1.75rem 1.5rem; margin: 1.5rem 0 1.5rem; }
+.dg-hero::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--dg-accent); }
+.dg-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg,#00ccee 0 25%,#ffe600 25% 50%,#00dd55 50% 75%,#ee00cc 75%); }
+.dg-hero-deco { position: absolute; width: 220px; height: 220px; right: -60px; top: -70px; background: var(--dg-accent); opacity: .09; transform: rotate(45deg); border-radius: 6px; pointer-events: none; }
+.dg-crumbs { font-size: .78rem; color: var(--dg-ink-3); margin: 0 0 .7rem; }
+.dg-crumbs a { color: var(--dg-link) !important; background: none !important; padding: 0 !important; font-weight: 500; }
+.dg-crumbs .sep { margin: 0 .4rem; opacity: .5; }
+.dg-hero-pills { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: .55rem; }
+.dg-hero-meta { font-size: .8rem; color: var(--dg-ink-2); font-weight: 500; }
+.dg-hero h1.article-title { color: var(--dg-ink) !important; margin: 0 0 .35rem; font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.15; }
+.dg-hero-sub { color: var(--dg-ink-2) !important; margin: 0; font-size: .98rem; line-height: 1.6; max-width: 640px; }
+.dg-lang { font-size: .68rem; font-weight: 800; letter-spacing: .1em; padding: .1rem .4rem; border: 1px solid var(--dg-ink-3); border-radius: 4px; margin-right: .2rem; vertical-align: 1px; }
+`
+
+/* ------------------------------------------------------------------ */
 /* ------------------------------------------------------------------ */
 /* Graph: nur Begriffe                                                  */
 /* ------------------------------------------------------------------ */
@@ -201,75 +442,319 @@ document.addEventListener("nav", async () => {
 `
 
 /* ------------------------------------------------------------------ */
-/* Zuletzt angelegt oder bearbeitet                                     */
+/* Infobox "Eintrag" und Wartungskasten "Belege fehlen" (aus dem Frontmatter) */
 /* ------------------------------------------------------------------ */
+
+/** Status, bei denen ein Eintrag als veröffentlicht gilt: die Infobox wird dann ausgegraut */
+const PUBLISHED_STATUS = ["dokumentiert", "arbeitsdefinition"]
+
+const TermInfo: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
+  const fm = (fileData.frontmatter ?? {}) as Record<string, any>
+  const here = fileData.slug!
+  const status = String(fm.status ?? "")
+  const keys = bereichKeys(fm)
+  const betreuung = String(fm.betreuung ?? "").trim()
+  const sep = h("span", { class: "sep" }, " · ")
+  // Oberbegriff steht im Frontmatter als "[[Name]]"; wenn es den Eintrag gibt, wird er verlinkt
+  const oberRaw = String(fm.oberbegriff ?? "").trim()
+  const oberName = (oberRaw.match(/^\[\[([^\]|#]+)/)?.[1] ?? oberRaw).trim()
+  const oberFile = oberName
+    ? allFiles.find(
+        (f) =>
+          isTerm(f.slug) &&
+          (String(f.frontmatter?.title ?? "") === oberName || asList((f.frontmatter ?? {}).aliases).includes(oberName)),
+      )
+    : undefined
+  const wikidata = String(fm.wikidata ?? "").trim()
+  const info = h("div", { class: "dg-info" + (PUBLISHED_STATUS.includes(status) ? " dg-info--published" : "") }, [
+    h("p", { class: "dg-info-title" }, "Eintrag"),
+    h("p", { class: "dg-info-body" }, [
+      h("b", {}, "Status: "), status || "offen",
+      sep, h("b", {}, "Bereich: "),
+      keys.length ? keys.map((k, i) => [i ? ", " : "", link(here, "fachgebiete/" + k, {}, BEREICHE[k]?.label ?? k)]) : "offen",
+      sep, h("b", {}, "Betreuung: "), betreuung || "offen",
+      sep, h("b", {}, "Typ: "), String(fm.typ ?? "begriff"),
+      sep, h("b", {}, "Oberbegriff: "),
+      oberName ? (oberFile ? link(here, oberFile.slug!, {}, oberName) : oberName) : "offen",
+      /^Q\d+$/.test(wikidata)
+        ? [sep, h("b", {}, "Wikidata: "), h("a", { href: "https://www.wikidata.org/wiki/" + wikidata, class: "external" }, wikidata)]
+        : null,
+    ]),
+  ])
+  const warn = asList(fm.tags).includes("belege-fehlen")
+    ? h("div", { class: "dg-warn" }, [
+        h("p", { class: "dg-info-title" }, "⚑ Belege fehlen"),
+        h("p", { class: "dg-info-body" }, [
+          "Definition und Erläuterung sind nicht belegt. Bitte Quellen mit Seitenangabe ergänzen und danach das Schlagwort ",
+          h("code", {}, "belege-fehlen"),
+          " entfernen (siehe ",
+          link(here, "redaktion/Leitfaden", {}, "Belegpflicht"),
+          ").",
+        ]),
+      ])
+    : null
+  return h("div", { class: "dg-term-info" }, [info, warn])
+}
+
+TermInfo.css = `
+.dg-term-info { display: flex; flex-direction: column; gap: .75rem; margin: 0 0 1.5rem; }
+.dg-info, .dg-warn { border: 1px solid var(--lightgray); border-left: 4px solid var(--dg-navy); border-radius: 6px; background: var(--dg-card); padding: .75rem 1rem; box-shadow: 0 2px 12px rgba(0,0,0,.05); }
+.dg-info-title { margin: 0 0 .3rem !important; font-weight: 700; font-size: .85rem; color: var(--dg-navy-text); }
+.dg-info-body { margin: 0 !important; font-size: .92rem; }
+.dg-info .sep { color: var(--gray); }
+.dg-info--published { opacity: .55; filter: grayscale(1); box-shadow: none; }
+.dg-warn { border-left-color: #ee00cc; background: rgba(238,0,204,.05); }
+.dg-warn .dg-info-title { color: var(--dg-magenta-text); }
+`
+
+/* ------------------------------------------------------------------ */
+/* Abschnittsköpfe für die Startseite                                   */
+/* ------------------------------------------------------------------ */
+
+const SectionHead = (kicker: string, title: string, more?: [string, string]): QuartzComponent => {
+  const C: QuartzComponent = ({ fileData }: QuartzComponentProps) =>
+    sectionHead(kicker, title, more ? link(fileData.slug!, more[0], { class: "internal dg-more" }, more[1]) : null)
+  return C
+}
+
+const SharedCss: QuartzComponent = () => null
+SharedCss.css = `
+.dg-section-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: .5rem; margin: 2.5rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--lightgray); }
+.dg-section-head h2 { margin: 0 !important; font-size: 1.6rem; }
+.dg-section-head h2::before { display: none !important; }
+.dg-kicker { margin: 0 0 .15rem !important; font-size: .78rem; font-weight: 600; color: var(--gray); letter-spacing: .02em; }
+.dg-more { font-size: .82rem; font-weight: 700; color: var(--dg-navy-text) !important; background: none !important; padding: 0 !important; white-space: nowrap; }
+.dg-more:hover { color: var(--tertiary) !important; }
+.dg-pill { display: inline-block; font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; padding: .22rem .65rem; border-radius: 4px; line-height: 1.4; color: #0a0a0a; background: #e0e0e0; }
+.dg-pill--magenta, .dg-pill--durch-spiele { background: #ee00cc; color: #fff; }
+.dg-pill--cyan, .dg-pill--fuer-spiele { background: #00ccee; }
+.dg-pill--yellow, .dg-pill--ueber-spiele { background: #ffe600; }
+.dg-pill--green, .dg-pill--mit-spielen { background: #00dd55; }
+.dg-pill--navy { background: #1c2e4a; color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); }
+.dg-pill--grey, .dg-pill--fundament { background: #6b6b6b; color: #fff; }
+.dg-pill--warn { background: transparent; color: var(--dg-magenta-text); box-shadow: inset 0 0 0 1.5px #ee00cc; }
+.dg-pill--warn::before { content: "⚑ "; }
+.dg-chip { display: inline-block; font-size: .74rem; padding: .2rem .6rem; border-radius: 20px; font-weight: 600; line-height: 1.4; background: var(--lightgray); color: var(--darkgray); border: 1px solid transparent; }
+a.dg-chip { text-decoration: none; }
+.dg-chip--fuer-spiele { background: rgba(0,180,216,.12) !important; color: var(--dg-cyan-text) !important; border-color: rgba(0,180,216,.3); }
+.dg-chip--ueber-spiele { background: rgba(255,230,0,.18) !important; color: var(--dg-yellow-text) !important; border-color: rgba(200,170,0,.35); }
+.dg-chip--durch-spiele { background: rgba(238,0,204,.08) !important; color: var(--dg-magenta-text) !important; border-color: rgba(238,0,204,.25); }
+.dg-chip--mit-spielen { background: rgba(0,221,85,.1) !important; color: var(--dg-green-text) !important; border-color: rgba(0,180,70,.3); }
+.dg-chip--fundament { background: rgba(127,127,127,.12) !important; color: var(--darkgray) !important; border-color: rgba(127,127,127,.3); }
+`
+
+/* ------------------------------------------------------------------ */
+/* Zuletzt angelegt oder bearbeitet: Slim-Cards                         */
+/* ------------------------------------------------------------------ */
+
+const slimCard = (from: string, t: ReturnType<typeof terms>[number], meta: string) =>
+  h(
+    "a",
+    {
+      href: resolveRelative(from as any, t.slug as any),
+      class: "internal dg-slim",
+      style: `--dg-accent:${BEREICHE[t.keys[0]]?.color ?? "#1c2e4a"}`,
+    },
+    [
+      h("div", { class: "dg-slim-body" }, [
+        h("div", { class: "dg-slim-title" }, [t.de.join(", "), t.en.length ? h("span", { class: "dg-slim-en" }, " / " + t.en.join(", ")) : null]),
+        t.kurz ? h("div", { class: "dg-slim-desc" }, t.kurz) : null,
+      ]),
+      h("div", { class: "dg-slim-meta" }, meta + " →"),
+    ],
+  )
 
 const RecentList: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
   const recent = terms(allFiles)
     .filter((t) => t.changed)
-    .sort((a, b) => b.changed!.getTime() - a.changed!.getTime())
+    // bei gleichem Zeitpunkt entscheidet zuerst das Anlegedatum, danach die alphabetische Reihenfolge
+    .sort(
+      (a, b) =>
+        b.changed!.getTime() - a.changed!.getTime() ||
+        (b.created?.getTime() ?? 0) - (a.created?.getTime() ?? 0) ||
+        a.de[0].localeCompare(b.de[0], "de"),
+    )
     .slice(0, 5)
   if (recent.length === 0) return null
-  const fmt = (d: Date) => d.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" })
-  return h("div", { class: "recent-terms" }, [
-    h("h3", {}, "Zuletzt angelegt oder bearbeitet"),
-    h(
-      "ul",
-      {},
-      recent.map((t) =>
-        h("li", {}, [
-          h("a", { href: resolveRelative(fileData.slug!, t.slug as any), class: "internal" }, t.de.join(", ")),
-          t.en.length ? h("span", { class: "recent-en" }, " / " + t.en.join(", ")) : null,
-          h("span", { class: "recent-date" }, " - " + fmt(t.changed!)),
-        ]),
-      ),
-    ),
-  ])
+  return h(
+    "div",
+    { class: "dg-slim-list" },
+    recent.map((t) => slimCard(fileData.slug!, t, [t.bereiche[0], fmtDate(t.changed!)].filter(Boolean).join(" · "))),
+  )
 }
 
 RecentList.css = `
-.recent-terms { margin: 1.25rem 0; }
-.recent-terms h3 { margin: 0 0 0.4rem; }
-.recent-terms ul { margin: 0; padding-left: 1.2rem; }
-.recent-terms .recent-en, .recent-terms .recent-date { color: var(--gray); }
+.dg-slim-list { display: flex; flex-direction: column; gap: .55rem; }
+.dg-slim, a.dg-slim.internal { display: flex; align-items: center; gap: 1rem; padding: .75rem 1rem !important; background: var(--dg-card) !important; border: 1px solid var(--lightgray); border-left: 4px solid var(--dg-accent); border-radius: 6px; color: inherit !important; transition: box-shadow .15s, transform .15s; }
+.dg-slim:hover { box-shadow: 0 2px 12px rgba(0,0,0,.1); transform: translateX(2px); }
+.dg-slim-body { flex: 1; min-width: 0; }
+.dg-slim-title { font-weight: 700; font-size: .95rem; color: var(--dark); }
+.dg-slim-en { font-weight: 400; color: var(--gray); }
+.dg-slim-desc { font-size: .8rem; color: var(--gray); margin-top: .1rem; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dg-slim-meta { font-size: .74rem; white-space: nowrap; color: var(--dg-navy-text); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 600px) { .dg-slim { flex-wrap: wrap; } .dg-slim-meta { width: 100%; } }
 `
 
 /* ------------------------------------------------------------------ */
-/* Begriffssuche und sortierbare Liste                                  */
+/* Bereiche: Säulen-Infografik wie auf spiel-wissenschaft.de           */
+/* ------------------------------------------------------------------ */
+
+const BereichGrid: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
+  const all = bereiche(allFiles)
+  const rows = terms(allFiles)
+  const here = fileData.slug!
+  const cols = all.filter((b) => ["fuer-spiele", "ueber-spiele", "durch-spiele"].includes(b.key))
+  const mit = all.find((b) => b.key === "mit-spielen")
+  const fund = all.find((b) => b.key === "fundament")
+  const count = (key: string) => rows.filter((r) => r.keys.includes(key)).length
+  const countLabel = (n: number) => (n === 1 ? "1 Begriff" : n + " Begriffe")
+
+  const column = (b: (typeof all)[number]) =>
+    h("div", { class: "dg-col dg-col--" + b.key }, [
+      link(here, b.slug, { class: "internal dg-col-head" }, [
+        b.icon ? h("div", { class: "dg-col-icon" }, b.icon) : null,
+        h("div", { class: "dg-col-title" }, b.label),
+        h("div", { class: "dg-col-sub" }, b.untertitel),
+      ]),
+      h("div", { class: "dg-col-body" }, [
+        b.beschreibung ? h("p", {}, b.beschreibung) : null,
+        h("div", { class: "dg-chips" }, b.felder.map((f) => chip(b.key, f))),
+        link(here, b.slug, { class: "internal dg-col-count" }, countLabel(count(b.key)) + " →"),
+      ]),
+    ])
+
+  return h("div", { class: "dg-sw" }, [
+    h("div", { class: "dg-sw-center" }, [
+      h("div", { class: "dg-sw-badge" }, [h("div", { class: "t" }, "◆  SPIELWISSENSCHAFT  ◆"), h("div", { class: "s" }, "Game Sciences")]),
+    ]),
+    h("div", { class: "dg-sw-grid" }, [h("div", { class: "dg-sw-bar", "aria-hidden": "true" }), ...cols.map(column)]),
+    mit
+      ? link(here, mit.slug, { class: "internal dg-sw-mit" }, [
+          h("span", { class: "k" }, mit.label),
+          h("span", { class: "d" }, mit.untertitel),
+          h("span", { class: "n" }, countLabel(count(mit.key)) + " →"),
+        ])
+      : null,
+    fund
+      ? h("div", { class: "dg-sw-fund" }, [
+          link(here, fund.slug, { class: "internal k" }, "Fundament"),
+          h("div", { class: "chips" }, fund.felder.map((f) => h("span", {}, f))),
+        ])
+      : null,
+  ])
+}
+
+BereichGrid.css = `
+.dg-sw { margin: .5rem 0 0; }
+.dg-sw-center { text-align: center; position: relative; padding-bottom: 1.25rem; }
+.dg-sw-center::after { content: ""; position: absolute; bottom: 0; left: 50%; width: 2px; height: 1.25rem; background: var(--lightgray); }
+.dg-sw-badge { display: inline-block; background: #1c2e4a; color: #fff; padding: .55rem 2.2rem; border-radius: 6px; }
+.dg-sw-badge .t { font-weight: 800; font-size: 1rem; letter-spacing: .04em; white-space: pre; }
+.dg-sw-badge .s { font-size: .68rem; letter-spacing: .12em; opacity: .55; margin-top: .15rem; text-transform: uppercase; font-style: italic; }
+.dg-sw-grid { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.dg-sw-bar { position: absolute; top: 0; height: 2px; left: calc(16.66% + .33rem); right: calc(16.66% + .33rem); background: var(--lightgray); }
+.dg-col { background: var(--dg-card); border-top: 3px solid var(--c); border-radius: 0 0 10px 10px; box-shadow: 0 2px 12px rgba(0,0,0,.07); overflow: hidden; display: flex; flex-direction: column; }
+.dg-col--fuer-spiele { --c: #00b4d8; --bg: rgba(0,180,216,.1); --ct: var(--dg-cyan-text); }
+.dg-col--ueber-spiele { --c: #c9a000; --bg: rgba(255,230,0,.12); --ct: var(--dg-yellow-text); }
+.dg-col--durch-spiele { --c: #ee00cc; --bg: rgba(238,0,204,.07); --ct: var(--dg-magenta-text); }
+.dg-col-head { display: block; text-align: center; padding: .9rem 1rem .7rem; background: var(--bg) !important; border-bottom: 1px solid var(--lightgray); color: inherit !important; }
+.dg-col-icon { font-size: 1.5rem; margin-bottom: .15rem; }
+.dg-col-title { font-weight: 800; font-size: 1.1rem; color: var(--ct); letter-spacing: .02em; }
+.dg-col-sub { font-size: .76rem; color: var(--gray); margin-top: .1rem; }
+.dg-col-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .75rem; flex: 1; }
+.dg-col-body p { font-size: .82rem; color: var(--darkgray); line-height: 1.55; margin: 0; }
+.dg-chips { display: flex; flex-wrap: wrap; gap: .35rem; }
+.dg-col-count { margin-top: auto; font-size: .8rem; font-weight: 700; color: var(--ct) !important; background: none !important; padding: 0 !important; }
+.dg-sw-mit { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; padding: .6rem 1.25rem; border-radius: 8px; border-left: 4px solid #00dd55; background: rgba(0,221,85,.08) !important; color: inherit !important; }
+.dg-sw-mit .k { font-weight: 800; color: var(--dg-green-text); }
+.dg-sw-mit .d { font-size: .82rem; color: var(--gray); flex: 1; }
+.dg-sw-mit .n { font-size: .8rem; font-weight: 700; color: var(--dg-green-text); }
+.dg-sw-fund { margin-top: 1rem; background: #1c2e4a; border-radius: 8px; padding: .8rem 1.25rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.dg-sw-fund .k { color: rgba(255,255,255,.6) !important; background: none !important; padding: 0 !important; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+.dg-sw-fund .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.dg-sw-fund .chips span { font-size: .71rem; padding: .15rem .5rem; border-radius: 4px; background: rgba(255,255,255,.08); color: rgba(255,255,255,.78); border: 1px solid rgba(255,255,255,.15); }
+@media (max-width: 900px) { .dg-sw-grid { grid-template-columns: 1fr; } .dg-sw-bar, .dg-sw-center::after { display: none; } .dg-sw-center { padding-bottom: .75rem; } }
+`
+
+/* ------------------------------------------------------------------ */
+/* Bereichsseite: Felder als Chips + Begriffe als Slim-Cards           */
+/* ------------------------------------------------------------------ */
+
+const BereichPage: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
+  const fm = (fileData.frontmatter ?? {}) as Record<string, any>
+  const key = String(fm.bereich ?? "")
+  const here = fileData.slug!
+  const rows = terms(allFiles).filter((t) => t.keys.includes(key))
+  const felder = asList(fm.felder)
+  return h("div", { class: "dg-bereich" }, [
+    fm.beschreibung ? h("p", { class: "dg-bereich-lead" }, String(fm.beschreibung)) : null,
+    felder.length
+      ? h("div", { class: "dg-bereich-box" }, [
+          h("p", { class: "dg-kicker" }, key === "fundament" ? "Fächer laut DGSW" : "Felder laut DGSW"),
+          h("div", { class: "dg-chips" }, felder.map((f) => chip(key, f))),
+          fm.betreuung ? h("p", { class: "dg-bereich-betreuung" }, [h("b", {}, "Betreuung: "), String(fm.betreuung)]) : null,
+        ])
+      : null,
+    sectionHead("Begriffe", "In diesem Bereich", link(here, "begriffe/index", { class: "internal dg-more" }, "Alle Begriffe →")),
+    rows.length
+      ? h("div", { class: "dg-slim-list" }, rows.map((t) => slimCard(here, t, t.id ? "ID " + t.id : t.changed ? fmtDate(t.changed) : "")))
+      : h("p", { class: "dg-empty" }, "Noch keine veröffentlichten Begriffe in diesem Bereich."),
+  ])
+}
+
+BereichPage.css = `
+.dg-bereich-lead { font-size: 1.05rem; color: var(--darkgray); margin-top: 0; }
+.dg-bereich-box { border: 1px solid var(--lightgray); border-radius: 10px; padding: 1rem 1.25rem; background: var(--dg-card); }
+.dg-bereich-betreuung { margin: .75rem 0 0; font-size: .85rem; color: var(--darkgray); }
+.dg-empty { color: var(--gray); font-style: italic; }
+`
+
+/* ------------------------------------------------------------------ */
+/* Begriffssuche, A-Z und sortierbare Liste                             */
 /* ------------------------------------------------------------------ */
 
 const TermTable: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
   const rows = terms(allFiles)
   if (rows.length === 0) return null
+  const hasIds = rows.some((r) => r.id)
+  const letters = Array.from(new Set(rows.map((r) => r.de[0].charAt(0).toUpperCase()))).sort((a, b) => a.localeCompare(b, "de"))
 
   const th = (label: string, key: string) =>
     h("th", { "data-key": key, tabindex: 0, role: "columnheader", "aria-sort": "none" }, label)
 
   return h("div", { class: "term-table-wrap" }, [
+    h("div", { class: "dg-alpha", role: "group", "aria-label": "Nach Anfangsbuchstaben filtern" }, [
+      h("button", { type: "button", class: "dg-alpha-btn active", "data-letter": "" }, "Alle"),
+      ...letters.map((l) => h("button", { type: "button", class: "dg-alpha-btn", "data-letter": l }, l)),
+    ]),
     h("div", { class: "term-search" }, [
       h("input", {
         type: "search",
         class: "term-filter",
-        placeholder: "Begriffe suchen (Deutsch, Englisch, ID, Bereich)",
+        placeholder: "Begriff suchen (Deutsch, Englisch, ID, Bereich) …",
         "aria-label": "Begriffe suchen",
       }),
-      h("span", { class: "term-count", "aria-live": "polite" }, rows.length + " Begriffe"),
+      h("span", { class: "term-count", "aria-live": "polite" }, rows.length + " Einträge"),
     ]),
     h("table", { class: "term-table" }, [
-      h("thead", {}, h("tr", {}, [th("ID", "id"), th("Deutsch", "de"), th("Englisch", "en"), th("Bereich", "bereich")])),
+      h("thead", {}, h("tr", {}, [hasIds ? th("ID", "id") : null, th("Deutsch", "de"), th("Englisch", "en"), th("Bereich", "bereich")])),
       h(
         "tbody",
         {},
         rows.map((r) =>
-          h("tr", {}, [
-            h("td", { "data-sort": r.id }, r.id),
+          h("tr", { "data-letter": r.de[0].charAt(0).toUpperCase() }, [
+            hasIds ? h("td", { "data-sort": r.id }, r.id) : null,
             h(
               "td",
               { "data-sort": r.de.join(", ").toLowerCase() },
               h("a", { href: resolveRelative(fileData.slug!, r.slug as any), class: "internal" }, r.de.join(", ")),
             ),
             h("td", { "data-sort": r.en.join(", ").toLowerCase() }, r.en.join(", ")),
-            h("td", { "data-sort": r.bereiche.join(", ").toLowerCase() }, r.bereiche.join(", ")),
+            h(
+              "td",
+              { "data-sort": r.bereiche.join(", ").toLowerCase() },
+              r.keys.map((k) => chip(k, BEREICHE[k]?.label ?? k)),
+            ),
           ]),
         ),
       ),
@@ -278,18 +763,23 @@ const TermTable: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps
 }
 
 TermTable.css = `
-.term-table-wrap { margin: 1.5rem 0; overflow-x: auto; }
-.term-search { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
-.term-filter { flex: 1; padding: 0.5rem 0.75rem; border: 1px solid var(--lightgray); border-radius: 6px; background: var(--light); color: var(--dark); font: inherit; }
-.term-filter:focus { outline: 2px solid var(--secondary); border-color: transparent; }
-.term-count { color: var(--gray); font-size: 0.85rem; white-space: nowrap; }
-.term-table { width: 100%; border-collapse: collapse; }
-.term-table th, .term-table td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--lightgray); }
-.term-table th { cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 2px solid var(--darkgray); }
-.term-table th:hover, .term-table th:focus-visible { color: var(--secondary); outline: none; }
-.term-table th[aria-sort="ascending"]::after { content: " \\25B2"; font-size: 0.7em; }
-.term-table th[aria-sort="descending"]::after { content: " \\25BC"; font-size: 0.7em; }
-.term-table td:first-child { color: var(--gray); font-variant-numeric: tabular-nums; width: 4rem; }
+.term-table-wrap { margin: .5rem 0 1rem; overflow-x: auto; }
+.dg-alpha { display: flex; flex-wrap: wrap; gap: .3rem; margin: 0 0 .8rem; }
+.dg-alpha-btn { font: inherit; padding: .28rem .65rem; border-radius: 5px; font-size: .85rem; font-weight: 600; background: var(--dg-card); border: 1px solid var(--lightgray); color: var(--dg-navy-text); cursor: pointer; transition: background .12s; }
+.dg-alpha-btn:hover, .dg-alpha-btn.active { background: #1c2e4a; color: #fff; border-color: #1c2e4a; }
+.term-search { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; }
+.term-filter { flex: 1; padding: .6rem .85rem; border: 1px solid var(--lightgray); border-radius: 6px; background: var(--dg-card); color: var(--dark); font: inherit; }
+.term-filter:focus { outline: 2px solid #00ccee; border-color: transparent; }
+.term-count { color: var(--gray); font-size: .82rem; white-space: nowrap; }
+.term-table { width: 100%; border-collapse: collapse; margin: 0 !important; }
+.term-table th, .term-table td { text-align: left; padding: .55rem .75rem; border-bottom: 1px solid var(--lightgray); }
+.term-table th { cursor: pointer; user-select: none; white-space: nowrap; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--dg-navy-text); border-bottom: 2px solid #1c2e4a; }
+.term-table th:hover, .term-table th:focus-visible { color: var(--tertiary); outline: none; }
+.term-table th[aria-sort="ascending"]::after { content: " \\25B2"; font-size: .7em; }
+.term-table th[aria-sort="descending"]::after { content: " \\25BC"; font-size: .7em; }
+.term-table td a.internal { font-weight: 700; }
+.term-table tbody tr:hover { background: var(--highlight); }
+.term-table td:first-child { font-variant-numeric: tabular-nums; }
 .term-table tr[hidden] { display: none; }
 `
 
@@ -316,47 +806,73 @@ document.addEventListener("nav", () => {
       th.addEventListener("click", handler)
       th.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handler() } })
     })
-    heads[1] && heads[1].setAttribute("aria-sort", "ascending")
+    const first = heads.find((x) => x.dataset.key === "de")
+    first && first.setAttribute("aria-sort", "ascending")
 
     const input = wrap.querySelector(".term-filter"), count = wrap.querySelector(".term-count")
+    const btns = Array.from(wrap.querySelectorAll(".dg-alpha-btn"))
     const total = tbody.rows.length
-    input.addEventListener("input", () => {
+    let letter = ""
+    const apply = () => {
       const q = input.value.trim().toLowerCase()
       let shown = 0
       Array.from(tbody.rows).forEach((r) => {
-        const hit = !q || r.textContent.toLowerCase().indexOf(q) !== -1
+        const hit = (!q || r.textContent.toLowerCase().indexOf(q) !== -1) && (!letter || r.dataset.letter === letter)
         r.hidden = !hit
         if (hit) shown++
       })
-      count.textContent = q ? shown + " von " + total + " Begriffen" : total + " Begriffe"
-    })
+      count.textContent = q || letter ? shown + " von " + total + " Einträgen" : total + " Einträge"
+    }
+    input.addEventListener("input", apply)
+    btns.forEach((b) => b.addEventListener("click", () => {
+      letter = b.dataset.letter || ""
+      btns.forEach((x) => x.classList.toggle("active", x === b))
+      apply()
+    }))
   })
 })
 `
 
 /* ------------------------------------------------------------------ */
-/* Reiter "Begriffe" (Startseite) oberhalb der Dateiliste               */
+/* Footer im Stil der DGSW                                              */
 /* ------------------------------------------------------------------ */
 
-const NavTab: QuartzComponent = ({ fileData }: QuartzComponentProps) =>
-  h("nav", { class: "nav-tabs" }, [
-    h(
-      "a",
-      {
-        href: resolveRelative(fileData.slug!, "index" as any),
-        class: "internal nav-tab" + (fileData.slug === "index" ? " active" : ""),
-      },
-      "Begriffe",
-    ),
+const DgFooter: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
+  const here = fileData.slug!
+  const col = (title: string, items: any[]) => h("div", { class: "dg-foot-col" }, [h("h4", {}, title), h("ul", {}, items.map((i) => h("li", {}, i)))])
+  const ext = (href: string, label: string) => h("a", { href, target: "_blank", rel: "noopener" }, label)
+  return h("footer", { class: "dg-foot" }, [
+    h("div", { class: "dg-foot-grid" }, [
+      h("div", { class: "dg-foot-col" }, [
+        h("p", { class: "dg-foot-tagline" }, "Where Game meets Science"),
+        h("p", {}, "Die Fachsprache ist das Begriffslexikon der Deutschen Gesellschaft für Spielwissenschaft e.V. (DGSW). Sie entsteht offen in einem git-Repository und lässt sich als Markdown-Vault lokal spiegeln."),
+      ]),
+      col("Fachsprache", [link(here, "index", {}, "Begriffe"), link(here, "begriffe/index", {}, "Alle Begriffe A-Z"), ext(DGSW + "/projekte/wiki/", "Fachsprachen-Wiki der DGSW")]),
+      col("Redaktion", [link(here, "redaktion/Leitfaden", {}, "Redaktionsleitfaden"), link(here, "redaktion/Mitwirken", {}, "Mitwirken"), link(here, "redaktion/Literatur", {}, "Literatur"), ext(REPO, "git-Repository")]),
+      col("Rechtliches", [link(here, "redaktion/Impressum", {}, "Impressum"), ext(DGSW + "/datenschutz.php", "Datenschutz"), ext(DGSW + "/kontakt/", "Kontakt")]),
+    ]),
+    h("div", { class: "dg-foot-bottom" }, [
+      h("span", {}, "© " + new Date().getFullYear() + " Deutsche Gesellschaft für Spielwissenschaft e.V."),
+      h("span", {}, [link(here, "redaktion/Impressum", {}, "Impressum"), " | ", ext(DGSW + "/datenschutz.php", "Datenschutz")]),
+    ]),
   ])
+}
 
-NavTab.css = `
-.nav-tabs { margin: 0.5rem 0 0.25rem; }
-.nav-tab { display: block; padding: 0.4rem 0.75rem; border-left: 4px solid var(--lightgray); font-weight: 600; color: var(--darkgray); background: transparent; }
-.nav-tab:hover { color: var(--secondary); border-left-color: var(--secondary); }
-.nav-tab.active { color: var(--secondary); border-left-color: var(--secondary); background: var(--highlight); }
-/* Auf der Seite "Alle Begriffe" steht die sortierbare Liste statt der automatischen Seitenliste */
-body[data-slug="begriffe/index"] .page-listing { display: none; }
+DgFooter.css = `
+.dg-foot { box-sizing: border-box; width: 100%; max-width: 100%; text-align: left; opacity: 1; background: var(--dg-surface); color: var(--dg-ink-2); border: 1px solid var(--dg-line); border-top: none; border-radius: 10px 10px 0 0; padding: 2.5rem 1.75rem 1.25rem; margin-top: 4rem; position: relative; }
+.dg-foot::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; border-radius: 10px 10px 0 0; background: linear-gradient(90deg,#00ccee 0 25%,#ffe600 25% 50%,#00dd55 50% 75%,#ee00cc 75%); }
+.dg-foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+.dg-foot h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--dg-ink); margin: 0 0 .8rem; }
+.dg-foot p { font-size: .84rem; line-height: 1.7; color: var(--dg-ink-2); margin: 0; }
+.dg-foot ul { list-style: none; padding: 0; margin: 0; }
+.dg-foot li { margin: 0 0 .4rem; }
+.dg-foot a { color: var(--dg-ink-2) !important; background: none !important; padding: 0 !important; font-size: .84rem; font-weight: 400 !important; border: none !important; }
+.dg-foot a:hover { color: var(--dg-link-hover) !important; }
+.dg-foot-tagline { font-size: .76rem !important; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dg-link-hover) !important; margin-bottom: .7rem !important; }
+.dg-foot-bottom { border-top: 1px solid var(--dg-line); padding-top: 1.1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; font-size: .76rem; color: var(--dg-ink-3); }
+.dg-foot-bottom a { font-size: .76rem; color: var(--dg-ink-3) !important; }
+@media (max-width: 800px) { .dg-foot-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .dg-foot-grid { grid-template-columns: 1fr; } }
 `
 
 /* ------------------------------------------------------------------ */
@@ -366,64 +882,50 @@ body[data-slug="begriffe/index"] .page-listing { display: none; }
 const is = (...slugs: string[]) => (page: QuartzComponentProps) => slugs.includes(page.fileData.slug as string)
 const only = (component: QuartzComponent, ...slugs: string[]) =>
   Component.ConditionalRender({ component, condition: is(...slugs) })
-const except = (component: QuartzComponent, ...slugs: string[]) =>
-  Component.ConditionalRender({ component, condition: (page) => !is(...slugs)(page) })
+const when = (component: QuartzComponent, test: (slug: string) => boolean) =>
+  Component.ConditionalRender({ component, condition: (page) => test(page.fileData.slug as string) })
 
 const graph = Component.Graph()
+const left = [
+  Brand,
+  Component.MobileOnly(Component.Spacer()),
+  Component.Flex({
+    components: [{ Component: Component.Search(), grow: true }, { Component: Component.Darkmode() }],
+  }),
+  SideNav,
+]
 
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [],
-  footer: Component.Footer({
-    links: {
-      DGSW: "https://www.spiel-wissenschaft.de/",
-      // TODO: Impressum und Datenschutz verlinken
-    },
-  }),
+  footer: DgFooter,
 }
 
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    except(Component.Breadcrumbs(), "index"),
-    Component.ArticleTitle(),
-    Component.ContentMeta({ showReadingTime: false }),
-    Component.TagList(),
-    // Startseite "Begriffe": Graph, zuletzt bearbeitet, Suche und Liste
+    SharedCss,
+    PageHero,
+    // Startseite "Begriffe"
+    only(SectionHead("Netz", "Begriffsgraph"), "index"),
     only(TermGraph, "index"),
+    only(SectionHead("Aktuelles", "Zuletzt angelegt oder bearbeitet", ["begriffe/index", "Alle Begriffe →"]), "index"),
     only(RecentList, "index"),
+    only(SectionHead("Forschungsfelder", "Begriffe nach Bereich"), "index"),
+    only(BereichGrid, "index"),
+    only(SectionHead("Verzeichnis", "Alle Begriffe A-Z"), "index"),
     only(TermTable, "index"),
+    only(SectionHead("Über die Fachsprache", "So ist das Lexikon aufgebaut"), "index"),
+    // Bereichsseiten
+    when(BereichPage, isBereich),
+    // Begriffe: Schlagwörter unter dem Kopf
+    when(Component.TagList(), isTerm),
+    when(TermInfo, isTerm),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [{ Component: Component.Search(), grow: true }, { Component: Component.Darkmode() }],
-    }),
-    NavTab,
-    Component.Explorer({
-      title: "Inhalt",
-      // Läuft im Browser, deshalb eigenständig (keine äußeren Variablen)
-      mapFn: (node) => {
-        const names: Record<string, string> = {
-          begriffe: "Alle Begriffe",
-          fachgebiete: "Bereiche",
-          redaktion: "Redaktion",
-        }
-        if (node.isFolder && names[node.slugSegment]) node.displayName = names[node.slugSegment]
-      },
-      sortFn: (a, b) => {
-        // Startseite "Begriffe" zuerst, dann Ordner, dann Seiten
-        if (a.slugSegment === "index") return -1
-        if (b.slugSegment === "index") return 1
-        if (a.isFolder !== b.isFolder) return a.isFolder ? -1 : 1
-        return a.displayName.localeCompare(b.displayName, undefined, { numeric: true, sensitivity: "base" })
-      },
-    }),
-  ],
+  left,
   right: [
     // Auf der Startseite steht der große Graph im Hauptbereich
-    except(graph, "index"),
+    when(graph, (s) => s !== "index"),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
@@ -431,20 +933,11 @@ export const defaultContentPageLayout: PageLayout = {
 
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    // Seite "Alle Begriffe": sortierbare Liste mit Suche
+    SharedCss,
+    PageHero,
+    // Seite "Alle Begriffe": A-Z, Suche, sortierbare Liste
     only(TermTable, "begriffe/index"),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [{ Component: Component.Search(), grow: true }, { Component: Component.Darkmode() }],
-    }),
-    NavTab,
-    Component.Explorer({ title: "Inhalt" }),
-  ],
+  left,
   right: [],
 }

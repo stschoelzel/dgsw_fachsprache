@@ -1,17 +1,20 @@
 ---
 title: FÜR Spiele
 bereich: fuer-spiele
+untertitel: "Entwicklung · Gestaltung · Schaffung"
+icon: "🛠️"
+beschreibung: "Wissenschaftliche Disziplinen, die Spiele entwerfen, bauen und erforschen, analog wie digital, von der Brettspielgestaltung bis zur Game Engine."
+felder:
+  - "Game Design"
+  - "Game Development"
+  - "Game Art & Audio"
+  - "Brettspieldesign"
+  - "Spielzeug- & Materialdesign"
+  - "XR & Immersive Media"
+  - "KI & Prozedurale Systeme"
+  - "Interaktionsdesign"
+betreuung: ""
 publish: true
 ---
 
-**Entwicklung · Gestaltung · Schaffung**
-
-Wissenschaftliche Disziplinen, die Spiele entwerfen, bauen und erforschen, analog wie digital, von der Brettspielgestaltung bis zur Game Engine.
-
-**Felder (laut DGSW):** Game Design, Game Development, Game Art & Audio, Brettspieldesign, Spielzeug- und Materialdesign, XR & Immersive Media, KI & prozedurale Systeme, Interaktionsdesign.
-
-**Betreuung:** *offen*
-
-## Begriffe in diesem Bereich
-
-Alle Einträge, die diesem Bereich zugeordnet sind, erscheinen unter den Rückverweisen dieser Seite und unter dem Schlagwort #bereich/fuer-spiele.
+%% Diese Seite wird auf der Website aus dem Frontmatter erzeugt: Untertitel, Beschreibung, Felder (laut spiel-wissenschaft.de) und die Liste der Begriffe mit dem Schlagwort #bereich/fuer-spiele. %%
