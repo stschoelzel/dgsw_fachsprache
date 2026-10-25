@@ -20,40 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=immersion
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Immersion |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Der Grad, in dem ein Spieler in die Spielwelt eintaucht und das Spielerlebnis als präsent, bedeutsam und real erlebt. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Immersion beschreibt die Qualität des Eintauchens in eine virtuelle Spielwelt. Der Begriff wird in der Spielwissenschaft unterschiedlich verwendet und umfasst sowohl technische Aspekte (Grafik, Sound) als auch psychologische Zustände (Präsenzgefühl, Absorption).
-
-### Ebenen der Immersion nach Ermi & Mäyrä
-
-- **Sensomotorische Immersion:** Unmittelbare sensorische Einbindung (Reaktion, Geschwindigkeit)
-- **Kognitive Immersion:** Absorption durch Rätsel, Herausforderung, Problemlösung
-- **Imaginative Immersion:** Emotionale und narrative Einbindung in Charaktere und Welt
-
-### Einflussfaktoren
-
-- Grafische Qualität und visuelle Konsistenz der Spielwelt
-- Audiodesign und räumliche Soundgestaltung
-- Narrativer Zusammenhalt und Charakterglaubwürdigkeit
-- Abwesenheit von immersionsbrechenden Elementen (Breaking the 4th Wall, UI-Fehler)
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

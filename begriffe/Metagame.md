@@ -20,37 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=metagame
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Metagame |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Das Spielen „um das Spiel herum" – Strategien, Informationen und Praktiken, die außerhalb des eigentlichen Regelwerks entstehen, aber das Spielerlebnis maßgeblich prägen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Das Metagame (von gr. *meta* = jenseits) bezeichnet die Gesamtheit der Strategien, Wissensbestände und sozialen Praktiken, die sich um ein Spiel herum entwickeln und über dessen formales Regelwerk hinausgehen.
-
-### Erscheinungsformen
-
-- **Competitive Meta:** Die aktuell stärksten Strategien, Decks oder Charakterkombinationen in Wettkampfspielen
-- **Community Meta:** Geteiltes Wissen über Optimierungsstrategien
-- **Social Meta:** Ungeschriebene Verhaltensregeln und Normen in der Spielgemeinschaft
-
-### Dynamik des Metagames
-
-Das Metagame ist inhärent dynamisch: Patches und Updates verschieben es, neue Entdeckungen revolutionieren es, und die Spielergemeinschaft entwickelt es kontinuierlich weiter. In eSports-Titeln ist das Verständnis des aktuellen Metas eine Kernkompetenz professioneller Spieler.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

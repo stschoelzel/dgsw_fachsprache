@@ -20,38 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=player-agency
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Player Agency |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Das Ausmaß, in dem Spieler das Gefühl haben, bedeutungsvolle Entscheidungen zu treffen, die das Spielgeschehen tatsächlich beeinflussen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Player Agency (Spieler-Handlungsmacht) bezeichnet die wahrgenommene und tatsächliche Fähigkeit des Spielers, durch eigene Entscheidungen das Spielgeschehen sinnvoll zu beeinflussen. Sie ist eng mit [[Immersion]], Motivation und Spielzufriedenheit verknüpft.
-
-### Dimensionen von Agency
-
-- **Lokale Agency:** Taktische Entscheidungen im Moment
-- **Globale Agency:** Strategische Entscheidungen mit Langzeitwirkung
-- **Narrative Agency:** Einfluss auf Storyline und Charakterentwicklung
-- **Expressive Agency:** Freiheit zur Selbstdarstellung im Spiel
-
-### Illusory Agency
-
-Kritisch diskutiert wird das Phänomen der „Illusory Agency": Spieler glauben, bedeutsame Entscheidungen zu treffen, obwohl die Ergebnisse vorherbestimmt sind. Narrative Spiele nutzen dies oft geschickt, um lineare Geschichten als interaktiv zu verkleiden.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

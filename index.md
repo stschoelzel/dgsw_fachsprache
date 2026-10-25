@@ -4,6 +4,8 @@ publish: true
 ---
 Die **Fachsprache** sammelt zentrale Begriffe der Spielwissenschaft auf Deutsch und Englisch. Jeder Eintrag beschreibt einen *Begriff* (ein Konzept): Deutsche und englische Benennungen hängen am selben Eintrag, Beziehungen zu anderen Begriffen sind im Text verlinkt, und konkurrierende Definitionen aus der Literatur stehen mit Beleg nebeneinander.
 
+# Das ist eine Demo Seite!
+
 ## Bereiche
 
 Die Gliederung folgt dem Selbstverständnis der DGSW: Wissenschaft FÜR, ÜBER, DURCH und MIT Spielen, analog und digital, auf dem Fundament ihrer Bezugsdisziplinen. Jeder Eintrag ist mindestens einem Bereich zugeordnet (siehe *Begriffe nach Bereich* oben): [[fuer-spiele|FÜR Spiele]], [[ueber-spiele|ÜBER Spiele]], [[durch-spiele|DURCH Spiele]], [[mit-spielen|MIT Spielen]], [[fundament|Fundament]].

@@ -20,42 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=speedrunning
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Speedrunning |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Praxis, ein Spiel so schnell wie möglich zu vervollständigen, oft unter Nutzung von Glitches, Exploits und präzisem Gameplay, begleitet von einer aktiven Community. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Speedrunning bezeichnet den Versuch, ein Spiel in möglichst kurzer Zeit zu vervollständigen. Speedrunner analysieren Spiele intensiv auf Abkürzungen, Programmierungsfehler (Glitches) und Optimierungspotenziale.
-
-### Kategorien
-
-- **Any% (Glitches Allowed):** Schnellster Weg zum Credits-Screen, alle Mittel erlaubt
-- **Any% (No Major Glitches):** Ohne spielbrechende Fehler
-- **100%:** Vollständige Vervollständigung aller Spielinhalte
-- **Low%:** Spiel mit möglichst wenig Items/Upgrades beenden
-
-### Community und Kultur
-
-Speedrunning hat eine lebendige Community auf Speedrun.com und wird durch Events wie AGDQ (Awesome Games Done Quick) sichtbar, das Millionenbeträge für wohltätige Zwecke sammelt.
-
-### Wissenschaftliche Perspektive
-
-Speedrunning ist ein Beispiel für [[Player Agency]] jenseits designierter Spielwege und zeigt, wie Communities alternative Bedeutungen und Praktiken rund um Spiele konstruieren.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

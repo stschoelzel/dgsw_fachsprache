@@ -20,42 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=lets-play-streaming
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Let's Play & Game Streaming |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Praxis des kommentierten Spielens für ein Publikum – ob aufgezeichnet (Let's Play) oder live (Streaming) – die eine eigene Medienkultur mit bedeutender wirtschaftlicher Dimension geschaffen hat. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Let's Plays sind aufgezeichnete Videos, in denen Spieler ein Spiel kommentierend präsentieren. Game Streaming bezeichnet das Live-Übertragen von Spielsessions. Beide Formate haben sich zu eigenständigen Medienformen entwickelt.
-
-### Kulturelle Bedeutung
-
-- YouTube und Twitch als zentrale Plattformen mit Millionen von Creators
-- Spieler-Influencer (Markiplier, PewDiePie) als kulturelle Figuren mit riesiger Reichweite
-- Parasoziale Beziehungen zwischen Streamern und ihrer Community
-- Neue Formen von Spielkritik und -vermittlung
-
-### Wirtschaftliche Dimension
-
-Let's Plays und Streaming beeinflussen Spielverkäufe erheblich. Marketingkooperationen, Sponsorings und direkte Unterstützung (Subscriptions, Donations) bilden die Geschäftsmodelle.
-
-### Rechtliche Fragen
-
-Copyright-Konflikte zwischen Publishers und Content Creatorn (Musik-DMCA, Monetarisierungsrechte) sind ein aktives Rechtsfeld in der Spielindustrie.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

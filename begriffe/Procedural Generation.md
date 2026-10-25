@@ -20,45 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=procedural-generation
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Procedural Generation |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Algorithmische Erstellung von Spielinhalten (Level, Welten, Quests) zur Laufzeit, um Wiederspielbarkeit und Inhaltsvielfalt zu maximieren. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Procedural Content Generation (PCG) bezeichnet Techniken zur algorithmischen Erzeugung von Spielinhalten anstelle manueller Erstellung durch Designer. Sie ermöglicht quasi-unbegrenzte Inhaltsvielfalt bei minimalem Speicherbedarf.
-
-### Anwendungsbereiche
-
-- **Terrain- und Weltgenerierung:** Minecraft, No Man's Sky
-- **Dungeon-Generierung:** Rogue-like-Spiele (Rogue, Nethack, Hades)
-- **Quest- und Storygenerierung:** Dynamische narrative Inhalte
-- **Texturgenerierung:** Prozedurale Materialien in [[Shader]]-Form
-
-### Algorithmen
-
-- Perlin/Simplex Noise für Terrain
-- L-Systeme für Vegetation
-- Cellular Automata für Höhlenstrukturen
-- Wave Function Collapse für Tile-basierte Level
-
-### KI-gestützte PCG
-
-Aktuelle Forschung verbindet PCG mit maschinellem Lernen (ML-PCG), um qualitativ hochwertigere und spieldesign-konforme Inhalte zu generieren.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

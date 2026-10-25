@@ -20,41 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=physik-engine
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Physik-Engine |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Softwaremodul, das physikalische Simulationen in Spielen berechnet – Kollisionen, Schwerkraft, Starrkörperdynamik, Weichkörper und Fluide. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Eine Physik-Engine berechnet die Interaktion von Spielobjekten nach physikalischen Gesetzen. Sie ermöglicht realistische oder zumindest plausible Bewegungen, Kollisionen und Reaktionen auf Spielerhandlungen.
-
-### Kernfunktionen
-
-- **Kollisionserkennung:** Erkennung wenn Objekte sich berühren oder überschneiden
-- **Rigid Body Dynamics:** Starrkörpersimulation für feste Objekte
-- **Soft Body Dynamics:** Simulation von verformbaren Körpern (Stoff, Jello)
-- **Partikelsysteme:** Massensimulation kleiner Partikel (Rauch, Feuer, Wasser)
-
-### Etablierte Physik-Engines
-
-- *NVIDIA PhysX:* Weit verbreitet, GPU-beschleunigt
-- *Bullet Physics:* Open Source, Blender und viele Indie-Engines
-- *Havok:* Middleware, in vielen AAA-Spielen
-- *Box2D:* 2D-Physik, weit verbreitet in 2D-Spielen
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

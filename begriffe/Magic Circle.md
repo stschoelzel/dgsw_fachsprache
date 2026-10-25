@@ -20,41 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=magic-circle
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Magic Circle |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Konzept aus Johan Huizingas Spieltheorie, das den abgegrenzten Raum des Spiels beschreibt, in dem eigene Regeln und Bedeutungen gelten – getrennt vom Alltag. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Der „Magic Circle" bezeichnet die symbolische Grenze, die den Spielraum vom gewöhnlichen Leben trennt. Innerhalb dieses Kreises gelten die Regeln des Spiels; er schafft eine eigenständige Wirklichkeit mit eigenen Normen und Bedeutungen.
-
-### Huizinga und Salen/Zimmerman
-
-Obwohl der Begriff auf Huizinga zurückgeht, wurde er vor allem durch Katie Salen und Eric Zimmermans „Rules of Play" (2004) in der modernen Spielwissenschaft verbreitet und präzisiert.
-
-### Kritik am Konzept
-
-- Mia Consalvo kritisiert den Magic Circle als zu rigide: Spieler bringen Werte, Fähigkeiten und kulturelle Kontexte in das Spiel mit
-- Phänomene wie Cheating, Metagaming oder Real-Money-Trading zeigen die Durchlässigkeit der Grenze
-- Neuere Ansätze sprechen von einem „Porous Magic Circle"
-
-### Bedeutung für die Praxis
-
-Das Konzept bleibt für Spieldesign und -analyse relevant, um zu verstehen, wie Spielregeln Welten konstituieren und welche Konsequenzen entstehen, wenn diese Grenze verletzt wird.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

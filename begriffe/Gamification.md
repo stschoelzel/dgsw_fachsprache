@@ -22,40 +22,28 @@ publish: true
 ---
 
 
-## Benennungen
+## B## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Gamification |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Anwendung von Spielelementen und -mechaniken in spielfremden Kontexten, um Motivation, Engagement und Verhalten zu beeinflussen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Gamification bezeichnet die Übertragung typischer Spielelemente (Punkte, Abzeichen, Ranglisten, Quests) auf nicht-spielerische Kontexte wie Bildung, Gesundheit, Marketing oder Unternehmensführung.
-
-### Häufig verwendete Elemente
-
-- **PBL-Trias:** Points (Punkte), Badges (Abzeichen), Leaderboards (Ranglisten)
-- **Quests und Herausforderungen:** Strukturierte Aufgaben mit Belohnungen
-- **Fortschrittsbalken:** Visualisierung von Fortschritt
-- **Virtuelle Belohnungen und Avatare:** Personalisierung und Selbstdarstellung
-
-### Kritische Perspektiven
-
-Sebastian Deterding und andere kritisieren oberflächliche Gamification als „Pointsification" – das bloße Aufpfropfen von Belohnungssystemen ohne echte spielerische Qualität. Solche Ansätze können [[Intrinsische Motivation|intrinsische Motivation]] untergraben (vgl. Overjustification-Effekt).
-
-### Forschungslage
-
-Die Wirksamkeit von Gamification ist kontextabhängig: In manchen Settings steigert sie Engagement signifikant, in anderen bleibt sie wirkungslos oder hat negative Effekte.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

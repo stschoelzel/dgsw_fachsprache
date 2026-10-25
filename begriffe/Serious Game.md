@@ -20,42 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=serious-games
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Serious Game |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Spiele, die primär für einen anderen Zweck als reine Unterhaltung entwickelt werden – für Bildung, Training, Gesundheit oder gesellschaftlichen Wandel. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Serious Games (ernsthafter Spiele) sind Spiele mit einem expliziten, primären Zweck jenseits der Unterhaltung. Der Begriff wurde [[redaktion/Literatur#Michael & Chen|2002 von David Michael und Sande Chen]] popularisiert und umfasst ein breites Spektrum von Anwendungen.
-
-### Anwendungsfelder
-
-- **Bildung und Ausbildung:** Militärsimulationen, medizinische Trainingsspiele
-- **Gesundheit:** Therapeutische Spiele, Bewegungsförderung (Exergames)
-- **Unternehmenskommunikation:** Onboarding, Compliance-Training
-- **Gesellschaftliche Themen:** Soziale Empathiespiele, Umweltbewusstsein
-
-### Abgrenzung und Überschneidung
-
-Serious Games überschneiden sich mit [[Game-Based Learning|GBL]] (Methode) und [[Gamification]] (Designelemente in Nicht-Spielkontexten). Die Grenzen sind fließend. Entscheidend ist die primäre Designintention.
-
-### Qualitätssicherung
-
-Effektive Serious Games müssen sowohl als Spiel als auch als Lernmedium funktionieren. Der „Fun-Learning-Balance" ist eine zentrale Designherausforderung.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- [[redaktion/Literatur#Michael & Chen|Michael, D. und Chen, S. (2006)]]: *Serious Games: Games That Educate, Train, and Inform.* Boston: Thomson Course Technology.
+* [Quellenschlüssel]

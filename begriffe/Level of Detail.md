@@ -20,41 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=level-of-detail
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Level of Detail | LOD | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Technik zur Optimierung der Renderingleistung, bei der weit entfernte Objekte mit weniger Details gerendert werden als nahe Objekte. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Level of Detail (LOD) ist eine Optimierungstechnik im Echtzeit-Rendering, bei der die geometrische Komplexität und Texturauflösung von Objekten dynamisch in Abhängigkeit ihrer Entfernung zur Kamera reduziert werden.
-
-### Funktionsweise
-
-Für jedes signifikante Spielobjekt werden mehrere Detailstufen (LOD 0 bis LOD N) modelliert. Bei steigender Entfernung wechselt das System automatisch zu weniger detaillierten Modellen:
-
-- LOD 0: Vollständiges Hochpolygon-Modell (nah)
-- LOD 1: Reduziertes Modell (mittlere Entfernung)
-- LOD 2+: Stark vereinfachte Geometrie oder Billboard (fern)
-
-### Moderne Ansätze
-
-- **Nanite (Unreal Engine 5):** Virtuelles Mikropolygon-Rendering, das LOD weitgehend automatisiert
-- **Impostor/Billboard LOD:** 3D-Objekte durch 2D-Sprites ersetzt
-- **HLOD (Hierarchical LOD):** Kombiniert mehrere Objekte zu einem LOD für ganze Stadtbereiche
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

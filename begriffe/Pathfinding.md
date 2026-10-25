@@ -20,41 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=pathfinding
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Pathfinding | Wegfindung | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Algorithmen, mit denen Spielcharaktere (NPCs) selbstständig Wege durch die Spielwelt finden, Hindernisse umgehen und Ziele erreichen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Pathfinding bezeichnet Algorithmen der künstlichen Intelligenz, die es Spielcharakteren ermöglichen, selbstständig navigierbare Pfade durch die Spielwelt zu berechnen und dabei Hindernisse und Einschränkungen zu berücksichtigen.
-
-### A\*-Algorithmus
-
-Der A\*-Algorithmus (A-Star) ist der Standardalgorithmus für Pathfinding in Spielen. Er kombiniert Dijkstras Algorithmus (garantiert kürzester Weg) mit einer Heuristik (Manhattan- oder euklidische Distanz), um Berechnungen zu beschleunigen.
-
-### Navigation Meshes (NavMesh)
-
-Moderne Spiele nutzen Navigation Meshes – vereinfachte Polygonrepräsentationen des begehbaren Spielraums – als Grundlage für Pathfinding-Berechnungen. Unity und Unreal Engine bieten integrierte NavMesh-Systeme.
-
-### Weiterentwicklungen
-
-- **Hierarchisches Pathfinding:** Mehrstufige Planung für große Welten
-- **Dynamisches Pathfinding:** Reaktion auf sich verändernde Spielwelten
-- **Crowd Simulation:** Pfadplanung für große NPC-Gruppen
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

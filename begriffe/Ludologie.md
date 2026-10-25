@@ -20,41 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=ludologie
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Ludologie |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Wissenschaftliche Disziplin, die Spiele als eigenständige Kulturobjekte untersucht, mit Fokus auf Spielregeln, Mechaniken und die Interaktion zwischen Spiel und Spieler. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Die Ludologie (von lat. *ludus* = Spiel) ist eine akademische Disziplin, die Spiele als eigenständige kulturelle und ästhetische Phänomene analysiert. Im Gegensatz zur Narratologie, die Spiele primär als Erzählmedium betrachtet, konzentriert sich die Ludologie auf die formalen Strukturen des Spielens selbst.
-
-### Historische Entwicklung
-
-Der Begriff wurde maßgeblich durch Jesper Juuls Werk und den „Ludology-Narratology Debate" der frühen 2000er Jahre geprägt. Vordenker wie Gonzalo Frasca und Markku Eskelinen formulierten eine eigenständige spielwissenschaftliche Methodologie.
-
-### Kernkonzepte
-
-- **Regelstruktur:** Analyse formaler Spielregeln und deren Wirkung
-- **Spieler-Spiel-Interaktion:** Das dynamische Verhältnis zwischen Regelwerk und Spielhandlung
-- **Ontologie des Spiels:** Was konstituiert ein Spiel als solches?
-
-### Bedeutung
-
-Die Ludologie bildet heute eine theoretische Grundlage der [[Game Studies]] und ermöglicht eine systematische Auseinandersetzung mit digitalen und analogen Spielen jenseits literatur- oder filmwissenschaftlicher Kategorien.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

@@ -20,38 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=indie-games
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Indie Games |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Videospiele, die unabhängig von großen Publishers entwickelt werden, oft mit kleinen Teams und beschränkten Budgets, aber häufig mit hoher künstlerischer Freiheit. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Indie Games (Independent Games) sind Spiele, die ohne finanzielle Abhängigkeit von großen Publishing-Konzernen entwickelt werden. Der Begriff beschreibt weniger eine Genrekategorie als ein Produktionsmodell mit großer thematischer und ästhetischer Freiheit.
-
-### Entstehung und Boom
-
-Die digitale Distributionsrevolution durch Steam (2003), App Stores und später itch.io hat seit den 2000er Jahren eine Indie-Spieleindustrie ermöglicht. Spiele wie *Braid* (2008), *Minecraft* (2009) und *Undertale* (2015) demonstrierten das kommerzielle und künstlerische Potenzial.
-
-### Wissenschaftliche Relevanz
-
-- Indie Games als Labor für spielerische Innovation und Experimentierfreude
-- Thematisierung von Nischen, Minderheitenerfahrungen und Tabuthemen
-- Alternative Wirtschafts- und Finanzierungsmodelle (Crowdfunding, Early Access)
-- Frage nach Definition: Sind „Big Indie"-Studios noch wirklich indie?
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

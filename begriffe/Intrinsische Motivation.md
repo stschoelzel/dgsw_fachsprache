@@ -20,39 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=intrinsische-motivation
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Intrinsische Motivation |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Motivation, die aus dem Spielen selbst entsteht – Freude, Neugier, Kompetenzerleben –, im Gegensatz zur extrinsischen Motivation durch externe Belohnungen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Intrinsische Motivation bezeichnet den Antrieb, eine Tätigkeit um ihrer selbst willen auszuüben – weil sie Freude bereitet, interessant ist oder das Kompetenzerleben steigert. In Spielen ist sie das Ziel guten Designs.
-
-### Selbstbestimmungstheorie (SDT)
-
-Ryan und Deci (2000) identifizieren drei psychologische Grundbedürfnisse, deren Erfüllung intrinsische Motivation fördert:
-
-- **Kompetenz:** Das Gefühl, etwas zu können und zu meistern
-- **Autonomie:** Selbstbestimmung und Wahlfreiheit
-- **Soziale Eingebundenheit:** Verbundenheit mit anderen
-
-### Overjustification-Effekt
-
-Ein kritisches Phänomen: Externe Belohnungen (Punkte, Abzeichen) können intrinsische Motivation untergraben, wenn sie als kontrollierend wahrgenommen werden. Dies ist zentral für Debatten um [[Gamification]].
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

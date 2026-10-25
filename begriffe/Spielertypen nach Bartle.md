@@ -20,38 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=spielertypen-bartle
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Spielertypen nach Bartle |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Taxonomie von vier Spielerpersönlichkeitstypen (Achiever, Explorer, Socializer, Killer), die Richard Bartle 1996 auf Basis von MUD-Spielerbeobachtungen entwickelte. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Ursprung
-
-Richard Bartle entwickelte 1996 seine einflussreiche Spielertypologie auf Basis von Beobachtungen in frühen Multi-User-Dungeons (MUDs). Er identifizierte vier grundlegende Spielermotivationen, die er als Typen kategorisierte.
-
-### Die vier Typen
-
-- **Achiever (Leistungsorientiert):** Strebt nach Punkten, Trophäen und messbarem Fortschritt. „Ich will gewinnen und alles freischalten."
-- **Explorer (Entdeckungsorientiert):** Erkundet Spielwelten, findet Geheimnisse, testet Systemgrenzen. „Ich will alles sehen und verstehen."
-- **Socializer (Sozialorientiert):** Sucht Interaktion mit anderen Spielern. „Ich spiele wegen der Leute."
-- **Killer (Wettbewerbsorientiert):** Strebt nach Dominanz über andere Spieler. „Ich will der Beste sein."
-
-### Kritik und Weiterentwicklung
-
-Das Modell wurde kritisiert als zu vereinfachend und MUD-spezifisch. Quantic Foundry entwickelten das umfassendere „Gamer Motivation Model" mit sechs Dimensionen auf Basis großer Spielerstichproben.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

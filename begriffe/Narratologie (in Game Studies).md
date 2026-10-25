@@ -20,41 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=narratologie
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Narratologie (in Game Studies) |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Die Anwendung narratologischer Methoden auf Spiele untersucht, wie Spiele Geschichten erzählen, und steht in produktiver Spannung zur Ludologie. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Die Narratologie in den [[Game Studies]] analysiert Spiele als Erzählmedien. Sie fragt, wie Computerspiele narrativ strukturiert sind, welche Erzähltechniken sie verwenden und welche Rolle die Interaktivität für das Erleben von Spielgeschichten spielt.
-
-### Der Narratologie-Ludologie-Streit
-
-In den frühen 2000er Jahren entbrannte ein akademischer Streit: Narratologen wie Janet Murray sahen Spiele als neues Erzählformat, Ludologen wie Gonzalo Frasca betonten die Eigenständigkeit des Spiels als Form. Heute wird die Dichotomie meist als überwunden betrachtet.
-
-### Narrative Techniken in Spielen
-
-- **Environmental Storytelling:** Geschichte durch Spielwelt und Umgebung vermitteln
-- **Ludonarratives:** Verschränkung von Gameplay und Erzählung
-- **Emergente Narrationen:** Spieler-generierte Geschichten aus Spielsystemen
-
-### Relevante Konzepte
-
-Ludonarrative Dissonanz (Clint Hocking), interaktive Fiktion und branching narratives sind zentrale Forschungsfelder der spielbezogenen Narratologie.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

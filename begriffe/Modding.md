@@ -20,43 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=modding
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Modding |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Praxis, bei der Spieler die Software eines Spiels modifizieren, um neue Inhalte, Veränderungen oder eigenständige Erfahrungen zu schaffen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Modding (von „Modification") bezeichnet das Verändern und Erweitern von Spielen durch deren Nutzergemeinschaft. Von kosmetischen Änderungen bis zu vollständigen Überarbeitungen (Total Conversions) umfasst Modding eine breite Palette kreativer Tätigkeiten.
-
-### Bedeutung für die Spielindustrie
-
-- Viele kommerzielle Spiele entstammen Mods: Counter-Strike (Half-Life Mod), DotA (Warcraft III Mod)
-- Verlängert den Lebenszyklus von Spielen erheblich (The Elder Scrolls, Total War)
-- Dient als Ausbildungsweg für Spielentwickler
-
-### Rechtliche Aspekte
-
-Mods bewegen sich in einer rechtlichen Grauzone. Die meisten Publisher tolerieren oder fördern Modding aktiv (Valve, Bethesda), da es der Community-Bindung dient. Kommerzialisierung von Mods bleibt jedoch rechtlich komplex.
-
-### Modding-Plattformen
-
-- Steam Workshop (Valve-Ökosystem)
-- Nexus Mods (plattformübergreifend)
-- CurseForge (Minecraft, WoW)
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

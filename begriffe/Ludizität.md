@@ -20,37 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=ludizitaet
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Ludizität |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Die „Spielhaftigkeit" eines Objekts oder einer Situation – das Potenzial, als Spiel erlebt oder genutzt zu werden, unabhängig von der Intention des Designers. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Begriff und Herkunft
-
-Ludizität (engl. *ludicity*) bezeichnet die Eigenschaft, die ein Objekt oder eine Situation spielfähig macht. Der Begriff ermöglicht es, spielerische Qualitäten jenseits formaler Spieldefinitionen zu beschreiben.
-
-### Anwendungsbereiche
-
-- Analyse von Spielzeug, das keine festen Regeln vorgibt
-- Bewertung von [[Gamification]]-Elementen in nicht-spielerischen Kontexten
-- Beschreibung von Alltagsobjekten mit hohem Spielpotenzial
-
-### Abgrenzung zum Spielbegriff
-
-Während „Spiel" ein definiertes System mit Regeln beschreibt, erfasst Ludizität das Spielpotenzial, das in Objekten oder Situationen latent vorhanden ist und durch den Spieler aktualisiert wird.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

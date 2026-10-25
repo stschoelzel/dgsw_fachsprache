@@ -20,43 +20,28 @@ dgsw_stand: 2026-08-20
 quelle: https://www.spiel-wissenschaft.de/projekte/wiki/begriff.php?slug=progression
 publish: true
 ---
-
-
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Progression |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Systeme, durch die Spieler Fortschritte machen, neue Fähigkeiten freischalten und das Gefühl von Wachstum und Entwicklung erleben. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Progression bezeichnet die Gesamtheit der Designsysteme, die dem Spieler das Gefühl von Fortschritt und Wachstum vermitteln. Sie ist einer der stärksten Motivationsmechanismen in modernen Spielen.
-
-### Progressionstypen
-
-- **Spieler-Skill-Progression:** Verbesserung durch Lernen und Übung
-- **Charakter-Progression:** XP, Level, Attribute (RPG-Systeme)
-- **Narrative Progression:** Vorankommen in der Geschichte
-- **Unlock-Systeme:** Freischalten von Inhalten durch Spielen
-- **Wirtschaftliche Progression:** Ressourcen akkumulieren
-
-### Psychologische Grundlagen
-
-Progressionssysteme sprechen das menschliche Bedürfnis nach Kompetenz und Meisterschaft an (Selbstbestimmungstheorie nach Ryan & Deci). Das Endowed Progress Effect – das Gefühl, bereits begonnen zu haben – steigert die Motivation erheblich.
-
-### Ethische Fragen
-
-Insbesondere bei Pay-to-Progress-Systemen in Free-to-Play-Spielen wird die Frage diskutiert, ob Progression als Manipulationsmechanismus zur Monetarisierung eingesetzt wird.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

@@ -29,32 +29,28 @@ publish: true
 | de | Game Studies |  | - |
 | en | *offen* | | *offen* |
 
+## Benennungen
+
+| Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
+
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Interdisziplinäres Forschungsfeld, das sich mit digitalen und analogen Spielen aus medienwissenschaftlicher, soziologischer, psychologischer und informatischer Perspektive befasst. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition und Gegenstand
-
-Game Studies ist die wissenschaftliche Erforschung von Computerspielen und verwandten Phänomenen. Das Feld ist genuiner als interdisziplinäre Disziplin angelegt und vereint Methoden und Theorien aus Medienwissenschaft, Soziologie, Psychologie, Pädagogik, Kulturwissenschaft und Informatik.
-
-### Institutionalisierung
-
-- Gründung des Fachjournal „Game Studies" (2001, gamestudies.org)
-- DiGRA (Digital Games Research Association) als internationale Fachgesellschaft
-- Zunehmende Etablierung von Studiengängen und Professuren weltweit
-
-### Forschungsfelder
-
-- Spielästhetik und -theorie ([[Ludologie]], Narratologie)
-- Spielkultur, Communities und Fan-Praktiken
-- Spielpädagogik, [[Serious Game|Serious Games]], [[Gamification]]
-- Spielpsychologie und Wirkungsforschung
-- Spielindustrieforschung, politische Ökonomie
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

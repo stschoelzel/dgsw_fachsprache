@@ -29,34 +29,28 @@ publish: true
 | de | Game-Based Learning | GBL, Game-based Learning, Game Based Learning | - |
 | en | *offen* | | *offen* |
 
+## Benennungen
+
+| Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
+
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Lernansatz, bei dem (digitale) Spiele als primäres Lernmedium eingesetzt werden, um Wissen, Fähigkeiten oder Einstellungen zu vermitteln. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Game-Based Learning bezeichnet den gezielten Einsatz von Spielen zur Erreichung definierter Lernziele. Im Gegensatz zu [[Serious Game|Serious Games]] können auch kommerzielle Unterhaltungsspiele für GBL genutzt werden.
-
-### Lerntheoretische Grundlagen
-
-- **Konstruktivismus:** Spieler konstruieren Wissen durch aktives Handeln
-- **Situated Learning:** Lernen in bedeutungsvollem Kontext
-- **Problembasiertes Lernen:** Herausforderungen als Lernmotor
-
-### Forschungsbefunde
-
-Meta-Analysen (Mayer 2019, Clark et al. 2016) zeigen positive Effekte von GBL auf Wissenserwerb und Motivation, besonders in MINT-Bereichen, historischem Lernen und Fremdsprachen. Herausforderungen: Transfer in reale Kontexte, Qualitätssicherung, Lehrerausbildung.
-
-### Beispiele
-
-- *Minecraft Education Edition* für Mathematik und Naturwissenschaften
-- *Kerbal Space Program* für Physik und Raumfahrt
-- *Civilization* für Geschichte und Geopolitik
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

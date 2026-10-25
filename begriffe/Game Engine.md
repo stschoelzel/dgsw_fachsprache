@@ -25,37 +25,25 @@ publish: true
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Game Engine |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Software-Framework, das die grundlegende technische Infrastruktur für die Spielentwicklung bereitstellt – Rendering, Physik, Audio, Input und mehr. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Definition
-
-Eine Game Engine ist eine wiederverwendbare Software-Architektur für die Entwicklung von Videospielen. Sie abstrahiert komplexe technische Aufgaben und ermöglicht Entwicklern, sich auf Spiellogik und -inhalt zu konzentrieren.
-
-### Kernkomponenten
-
-- **Rendering Engine:** 2D/3D-Grafik, [[Shader]], Beleuchtung
-- **[[Physik-Engine]]:** Kollisionserkennung, Rigid Body Dynamics
-- **Audio Engine:** Soundwiedergabe, räumliches Audio, Mixing
-- **Input-System:** Verarbeitung von Tastatur, Maus, Controller
-- **Asset Pipeline:** Import und Verwaltung von Spielinhalten
-- **Scripting:** Programmierinterface für Spiellogik
-
-### Marktführende Engines
-
-- *Unreal Engine 5* (Epic Games): AAA-Grafik, C++/Blueprints
-- *Unity*: Plattformübergreifend, C#, Indie-freundlich
-- *Godot*: Open Source, GDScript/C#, wachsende Community
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

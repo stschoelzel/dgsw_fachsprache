@@ -25,32 +25,25 @@ publish: true
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Homo Ludens |  | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Begriff aus Johan Huizingas gleichnamigem Werk (1938), der den spielenden Menschen als kulturelles Grundprinzip beschreibt – Spiel als Ursprung von Kultur und Zivilisation. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Ursprung und Bedeutung
-
-„Homo Ludens – Vom Ursprung der Kultur im Spiel" (1938) ist das Hauptwerk des niederländischen Kulturhistorikers Johan Huizinga. Darin argumentiert er, dass Spiel nicht nur ein kulturelles Produkt ist, sondern der Ursprung und die Grundlage menschlicher Kultur schlechthin.
-
-### Kernthese
-
-Huizinga definiert Spiel als freiwillige Tätigkeit, die außerhalb des „gewöhnlichen Lebens" stattfindet, zeitlich und räumlich begrenzt ist, eigenen Regeln folgt und Gemeinschaft stiftet. Recht, Krieg, Kunst, Wissenschaft und Religion hätten alle spielerische Ursprünge.
-
-### Kritik und Rezeption
-
-- Huizingas Spielbegriff wird als zu weit und kulturalistisch kritisiert
-- Roger Caillois erweiterte und differenzierte das Konzept in „Les jeux et les hommes" (1958)
-- In der modernen Spielwissenschaft gilt das Werk als unverzichtbarer Ausgangspunkt
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]

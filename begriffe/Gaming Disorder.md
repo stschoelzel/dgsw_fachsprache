@@ -25,35 +25,25 @@ publish: true
 ## Benennungen
 
 | Sprache | Vorzugsbenennung | weitere Benennungen | Äquivalenz zu DE |
-| --- | --- | --- | --- |
-| de | Gaming Disorder | Spielsucht | - |
-| en | *offen* | | *offen* |
+| :--- | :--- | :--- | :--- |
+| de | Ich bin die deutsche Vorzugsbenennung | Ich bin ein Synonym, Schreibvariante | - |
+| en | I am the preferred English term | I am a synonym | voll / teilweise / keine |
 
 ## Definition
+**DE:** Ich bin eine einzeilige deutsche Dummy-Definition aus Oberbegriff und unterscheidenden Merkmalen ([Quellenschlüssel]).
+**EN:** I am a one-line English dummy definition consisting of hypernym and distinguishing features ([Quellenschlüssel]).
 
-**DE:** Von der WHO 2019 anerkannte Verhaltensstörung, charakterisiert durch eingeschränkte Kontrolle über das Spielen und fortgesetztes exzessives Spielen trotz negativer Konsequenzen. *[Beleg fehlt]*
+## Abgrenzung
+Ich bin ein einzeiliger Platzhalter für die Abgrenzung zu verwandten [Begriffen], mit denen ich oft verwechselt werde.
 
-**EN:** *offen*
+## Definitionen in der Literatur
+> "Ich bin ein kurzes, wörtliches Dummy-Zitat aus der Fachliteratur." ([Quellenschlüssel], S. x)
 
-## Erläuterung
+## Beispiele
+Ich bin ein einzeiliges Dummy-Beispiel, das zeigt, wie ich in der Praxis sichtbar werde.
 
-### Klassifikation
-
-Die WHO nahm Gaming Disorder 2019 in die ICD-11 auf (6C51). Sie ist definiert durch: (1) eingeschränkte Kontrolle über das Spielverhalten, (2) zunehmende Priorisierung von Gaming gegenüber anderen Lebensbereichen, (3) Fortführen trotz negativer Konsequenzen. Die Symptome müssen mindestens 12 Monate bestehen.
-
-### Wissenschaftliche Debatte
-
-Die Aufnahme in die ICD-11 ist umstritten. Kritiker (u.a. viele Spielwissenschaftler) monieren:
-
-- Unzureichende Evidenzbasis für eine eigenständige Diagnose
-- Pathologisierung normaler, intensiver Spielnutzung
-- Stigmatisierungsrisiko für Spieler und Spielkultur
-- Vernachlässigung komorbilder Erkrankungen als eigentliche Ursachen
-
-### Prävalenz und Therapie
-
-Schätzungen zur Prävalenz variieren stark (0,3%–1% je nach Kriterien). Kognitive Verhaltenstherapie gilt als vielversprechendster therapeutischer Ansatz.
+## Anmerkungen
+Ich bin eine einzeilige Dummy-Anmerkung für offene Fragen, den Diskussionsstand oder Unterschiede zwischen Disziplinen.
 
 ## Quellen
-
-- *offen*
+* [Quellenschlüssel]
